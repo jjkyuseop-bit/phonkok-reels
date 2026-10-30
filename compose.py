@@ -111,9 +111,7 @@ def narration_words(audio_path: str):
     except Exception:
         return None
     global _WHISPER
-    try:
-        _WHISPER
-    except NameError:
+    if "_WHISPER" not in globals():
         _WHISPER = WhisperModel("medium", device="cpu", compute_type="int8")
     segs, _ = _WHISPER.transcribe(audio_path, language="ko", word_timestamps=True)
     words = []
@@ -131,7 +129,11 @@ def chunk_times(seg: dict, audio_path: str):
             return [(seg["at"], seg["at"] + seg["duration"] + 0.3, seg["subtitle"])]
         return []
     at, dur = seg["at"], seg["duration"]
-    words = narration_words(audio_path)
+    try:
+        words = narration_words(audio_path) if audio_path else None
+    except Exception as e:  # 정렬 실패 시 비례 분할로 폴백
+        print(f"[warn] whisper 정렬 실패, 비례 분할 사용: {e}")
+        words = None
     out = []
     if words:
         # 공백 제거 문자열을 순서대로 소비하며 각 chunk 의 첫/마지막 단어를 찾음

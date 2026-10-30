@@ -33,8 +33,18 @@ jobs:
 
       - name: Compose
         run: |
-          python3 compose.py "${{ inputs.episode }}"
+          set -o pipefail
+          python3 compose.py "${{ inputs.episode }}" 2>&1 | tee compose.log
           ls -la "${{ inputs.episode }}"
+
+      - name: Publish log on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="debug-${{ inputs.episode }}"
+          gh release delete "$TAG" --yes --cleanup-tag 2>/dev/null || true
+          gh release create "$TAG" --title "$TAG" --notes "실패 로그" compose.log
 
       - name: Extract preview frames
         run: |
