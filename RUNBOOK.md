@@ -34,6 +34,10 @@
 - `subtitle_chunks` 로 나레이션 자막을 어절 단위로 쪼갠다.
 - 효과음 `at` 은 반전 발화 시작 시각.
 
+## 4.5 판정 — 영상이 잘못 나왔으면 여기서 분기
+- transcript A/B 에서 핵심 대사(훅·반전·펀치라인)가 미인식·불일치면 FORMAT.md "영상이 잘못 나왔을 때" 절차대로: ①자막 비우기(부수 대사만) → ②해당 샷만 재생성해 `keep_segments`로 교체 → ③전체 재생성 1회 → ④나레이션 모드 폴백. 예산 가드 준수. 어떤 경로를 택했는지 reports/ 에 기록.
+- 부분 재생성 방법: generate_video(seedance-2.5, 720p, 16:9, 5~8s, 같은 인물·의상·장소 묘사 + 해당 대사만) → 새 클립과 원본을 `stitch_videos` 로 [원본 앞부분 | 새 클립 | 원본 뒷부분] 순서로 잇기 위해, 먼저 원본을 keep_segments 로 앞/뒤 두 조각으로 만들지 말고 **stitch_videos 에 url+durationSeconds 로 원본을 두 번 넣되 compose 의 keep_segments 로 각 구간을 지정**하는 대신, 단순하게: 원본 전체를 clip1, 새 클립을 clip2 로 stitch 한 뒤 spec.keep_segments 로 [원본 유지구간들…, 새 클립 구간] 순서를 지정한다(keep_segments 는 정렬되어 적용되므로 새 클립은 항상 끝에 붙는 구조 → 교체할 샷이 마지막 샷이 아닐 때는 ③ 전체 재생성을 택한다).
+
 ## 5. 합성
 - 커밋/푸시 후 `compose` 워크플로 dispatch → 완료되면 Release `epNN_slug` 의 mp4·preview 를 받아 **프레임을 직접 보고** 제목/자막 위치·겹침·오타를 점검. 문제가 있으면 spec 수정 후 재실행.
 - 공개 URL: `https://github.com/jjkyuseop-bit/phonkok-reels/releases/download/epNN_slug/<output>.mp4`
