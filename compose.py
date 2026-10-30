@@ -25,8 +25,10 @@ import sys
 import urllib.request
 
 W, H = 1080, 1920          # 세로 캔버스
-VW, VH = 1080, 608         # 16:9 영상 축소 크기
-VY = (H - VH) // 2         # 영상 상단 y = 656
+# 참고 릴스(phon.kok 2026-09-16) 실측: 영상 블록 약 1080x856 (≈5:4), 상단 띠 ~513px, 하단 띠 ~551px
+VW, VH = 1080, 856         # 영상 블록 크기 (16:9 소스는 높이 맞춰 확대 후 중앙 크롭)
+VY = 513                   # 영상 상단 y
+RED = "&H5548E8&"          # 폰콕 시그니처 #E84855 (ASS는 BGR)
 
 
 def download(url: str, dest: str) -> None:
@@ -51,12 +53,21 @@ def esc(text: str) -> str:
     return text.replace("\n", "\\N")
 
 
+def title_markup(text: str) -> str:
+    """제목에서 [[빨강]] 표기를 ASS 색 오버라이드로 변환."""
+    return esc(text).replace("[[", "{\\c" + RED + "}").replace("]]", "{\\c&HFFFFFF&}")
+
+
 def build_ass(spec: dict, path: str) -> None:
-    font = spec.get("font", "Noto Sans CJK KR")
+    font_black = spec.get("font_black", "Noto Sans CJK KR Black")
+    font_regular = spec.get("font_regular", "Noto Sans CJK KR")
     main_end = spec["main_duration"]
-    # 위 띠 높이 656: 제목은 띠 아래쪽(영상 바로 위)에, 아래 띠: 대사는 띠 위쪽(영상 바로 아래)에
-    title_margin_v = H - VY + 40           # 하단 기준 마진 → 제목 하단이 영상 위 40px
-    dlg_margin_v = VY + VH + 40            # 상단 기준 마진 → 대사 상단이 영상 아래 40px (아래 검은 띠)
+    # 참고 릴스 실측 기준:
+    #  - 제목: 상단 띠 중앙보다 약간 아래, 흰색 Black 웨이트 ~110px, 핵심 단어 빨강, 2줄
+    #  - 나레이션: 영상 가운데, 흰색 Black 웨이트 ~86px, 외곽선 없음(옅은 그림자만)
+    #  - 대사: 하단 띠, 영상 아래 ~85px, 흰색 Regular ~46px, "- " 접두, 2줄 허용
+    title_margin_v = H - VY + 95           # 제목 하단이 영상 위 95px
+    dlg_margin_v = VY + VH + 85            # 대사 상단이 영상 아래 85px
     header = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -66,20 +77,21 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Title,{font},62,&H0000F0FF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,0,0,2,50,50,{title_margin_v},1
-Style: Narr,{font},60,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,4,2,5,60,60,0,1
-Style: Dlg,{font},50,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,0,0,8,50,50,{dlg_margin_v},1
+Style: Title,{font_black},110,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,-2,0,1,0,0,2,40,40,{title_margin_v},1
+Style: Narr,{font_black},86,&H00FFFFFF,&H000000FF,&H00000000,&H90000000,0,0,0,0,100,100,-1,0,1,0,3,5,30,30,0,1
+Style: Dlg,{font_regular},46,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,8,60,60,{dlg_margin_v},1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     lines = [header]
-    lines.append(f"Dialogue: 0,{ass_time(0)},{ass_time(main_end)},Title,,0,0,0,,{esc(spec['title'])}\n")
+    lines.append(f"Dialogue: 0,{ass_time(0)},{ass_time(main_end)},Title,,0,0,0,,{title_markup(spec['title'])}\n")
     for seg in spec["narration"]:
         if seg.get("subtitle"):
             lines.append(f"Dialogue: 1,{ass_time(seg['at'])},{ass_time(seg['at'] + seg['duration'] + 0.3)},Narr,,0,0,0,,{esc(seg['subtitle'])}\n")
-    for s in spec.get("dialogue_subtitles", []):
-        lines.append(f"Dialogue: 2,{ass_time(s['start'])},{ass_time(s['end'])},Dlg,,0,0,0,,{esc(s['text'])}\n")
+    for d in spec.get("dialogue_subtitles", []):
+        text = d["text"] if d["text"].startswith("- ") else "- " + d["text"]
+        lines.append(f"Dialogue: 2,{ass_time(d['start'])},{ass_time(d['end'])},Dlg,,0,0,0,,{esc(text)}\n")
     with open(path, "w", encoding="utf-8") as f:
         f.writelines(lines)
 
@@ -167,28 +179,28 @@ def main() -> None:
     # 입력: 0 본편, 1 엔드카드, 2 BGM, 3 SFX, 4.. 나레이션들
     fc = []
     fc.append(
-        f"[0:v]trim=0:{main_d},setpts=PTS-STARTPTS,scale={VW}:{VH}:force_original_aspect_ratio=decrease,"
-        f"pad={W}:{H}:(ow-iw)/2:{VY}:black,fps={fps},subtitles='{ff_path(ass)}'[v0]"
+        f"[0:v]trim=0:{main_d},setpts=PTS-STARTPTS,scale={VW}:{VH}:force_original_aspect_ratio=increase,"
+        f"crop={VW}:{VH},pad={W}:{H}:(ow-iw)/2:{VY}:black,setsar=1,format=yuv420p,fps={fps},subtitles='{ff_path(ass)}'[v0]"
     )
     fc.append(
-        f"[1:v]scale={VW}:{VH}:force_original_aspect_ratio=decrease,pad={W}:{H}:(ow-iw)/2:{VY}:black,"
-        f"fps={fps},setpts=PTS-STARTPTS[v1]"
+        f"[1:v]scale={VW}:{VH}:force_original_aspect_ratio=increase,crop={VW}:{VH},"
+        f"pad={W}:{H}:(ow-iw)/2:{VY}:black,setsar=1,format=yuv420p,fps={fps},setpts=PTS-STARTPTS[v1]"
     )
     fc.append("[v0][v1]concat=n=2:v=1:a=0[v]")
     fc.append(
-        f"[0:a]atrim=0:{main_d},asetpts=PTS-STARTPTS,volume={mix['video_audio']},"
+        f"[0:a]atrim=0:{main_d},asetpts=PTS-STARTPTS,loudnorm=I=-15:TP=-1.5:LRA=9,aresample=48000,aformat=channel_layouts=stereo,volume={mix['video_audio']},"
         f"volume={duck_expr}:eval=frame,apad=whole_dur={total}[a0]"
     )
     fc.append(
-        f"[2:a]atrim=0:{total},asetpts=PTS-STARTPTS,"
+        f"[2:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{total},asetpts=PTS-STARTPTS,"
         f"volume='if(lt(t,{main_d}),{mix['bgm_main']},{mix['bgm_end']})':eval=frame,"
         f"volume={duck_expr}:eval=frame,afade=t=out:st={total-1.2}:d=1.2[a1]"
     )
-    fc.append(f"[3:a]volume={mix['sfx']},adelay={sfx_ms}|{sfx_ms}[a2]")
+    fc.append(f"[3:a]aresample=48000,aformat=channel_layouts=stereo,volume={mix['sfx']},adelay={sfx_ms}|{sfx_ms}[a2]")
     labels = ["[a0]", "[a1]", "[a2]"]
     for i, seg in enumerate(spec["narration"]):
         ms = int(seg["at"] * 1000)
-        fc.append(f"[{4+i}:a]loudnorm=I=-14:TP=-1.5:LRA=7,volume={mix['narration']},adelay={ms}|{ms}[n{i}]")
+        fc.append(f"[{4+i}:a]loudnorm=I=-14:TP=-1.5:LRA=7,aresample=48000,aformat=channel_layouts=stereo,volume={mix['narration']},adelay={ms}|{ms}[n{i}]")
         labels.append(f"[n{i}]")
     fc.append(
         "".join(labels) + f"amix=inputs={len(labels)}:duration=longest:normalize=0,"

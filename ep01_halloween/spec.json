@@ -2,10 +2,12 @@
   "episode": "ep01_halloween",
   "output": "phonkok_ep01_halloween.mp4",
   "fps": 30,
-  "font": "Noto Sans CJK KR",
-  "title": "핸드폰 매장에서 진짜 무서운 건\n귀신이 아니었다",
+  "title": "핸드폰 매장에서\n진짜 [[무서운 건]] 귀신이 아니었다",
   "main_duration": 15.0,
-  "endcard": { "file": "../endcard/endcard.mp4", "duration": 6.0 },
+  "endcard": {
+    "file": "../endcard/endcard.mp4",
+    "duration": 6.0
+  },
   "assets": {
     "video": {
       "task_id": "fe53e049-913b-41e9-9e38-45ae8b38a2c2",
@@ -46,9 +48,30 @@
     }
   ],
   "dialogue_subtitles": [
-    { "start": 3.0, "end": 5.3, "text": "어서오세요… 기기변경이시죠?" },
-    { "start": 6.0, "end": 7.2, "text": "네. 제일 싼 걸로요." },
-    { "start": 8.3, "end": 10.6, "text": "할부원금이… 백오십만 원?!" }
+    {
+      "start": 3.0,
+      "end": 5.3,
+      "text": "어서오세요… 기기변경이시죠?"
+    },
+    {
+      "start": 6.0,
+      "end": 7.2,
+      "text": "네. 제일 싼 걸로요."
+    },
+    {
+      "start": 8.3,
+      "end": 10.6,
+      "text": "할부원금이… 백오십만 원?!"
+    }
   ],
-  "mix": { "video_audio": 0.9, "narration": 1.6, "bgm_main": 0.14, "bgm_end": 0.35, "sfx": 0.8, "duck": 0.3 }
+  "mix": {
+    "video_audio": 1.0,
+    "narration": 1.4,
+    "bgm_main": 0.12,
+    "bgm_end": 0.35,
+    "sfx": 0.8,
+    "duck": 0.45
+  },
+  "font_black": "Noto Sans CJK KR Black",
+  "font_regular": "Noto Sans CJK KR"
 }
