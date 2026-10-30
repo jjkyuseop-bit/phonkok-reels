@@ -14,12 +14,19 @@ permissions:
 jobs:
   analyze:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
-      - run: python3 compose.py "${{ inputs.episode }}" --analyze
-      - name: Extract frames every second for review
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q faster-whisper
+      - name: Energy-based speech windows
+        run: python3 compose.py "${{ inputs.episode }}" --analyze
+      - name: Whisper transcript (Korean, word timestamps)
+        run: python3 transcribe.py "${{ inputs.episode }}"
+      - name: Contact sheet
         run: |
           EP="${{ inputs.episode }}"
           ffmpeg -y -loglevel error -i "$EP/src_video.mp4" -vf "fps=1,scale=480:-1,tile=5x3" "$EP/contact_sheet.jpg"
@@ -29,4 +36,5 @@ jobs:
           EP="${{ inputs.episode }}"
           TAG="analyze-$EP"
           gh release delete "$TAG" --yes --cleanup-tag 2>/dev/null || true
-          gh release create "$TAG" --title "$TAG" --notes "음성 구간 분석" "$EP/speech_segments.txt" "$EP/contact_sheet.jpg"
+          gh release create "$TAG" --title "$TAG" --notes "음성 구간 분석 + 대사 인식" \
+            "$EP/speech_segments.txt" "$EP/transcript.json" "$EP/transcript.txt" "$EP/contact_sheet.jpg"
