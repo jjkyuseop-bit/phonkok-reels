@@ -203,6 +203,54 @@ def analyze_speech(video: str, out_txt: str) -> None:
     print(open(out_txt, encoding="utf-8").read())
 
 
+def apply_cuts(spec: dict, video: str, ep_dir: str) -> str:
+    """spec["keep_segments"] = [[s,e],...] (원본 시간, 초). 지정 구간만 이어붙인 새 본편을 만들고,
+    원본 시간으로 적힌 dialogue_subtitles / narration.at / sfx.at / main_duration 을 새 타임라인으로 변환한다.
+    변환 규칙: 잘린 구간 안의 자막은 삭제, 나레이션·효과음 시작이 잘린 구간 안이면 다음 유지 구간 시작으로 이동."""
+    segs = spec.get("keep_segments")
+    if not segs:
+        return video
+    segs = sorted((float(a), float(b)) for a, b in segs)
+
+    def remap(t: float):
+        acc = 0.0
+        for a, b in segs:
+            if t < a:
+                return acc  # 잘린 구간 → 다음 유지 구간 시작
+            if t <= b:
+                return acc + (t - a)
+            acc += b - a
+        return acc  # 끝 이후 → 새 길이
+
+    def inside(t: float) -> bool:
+        return any(a <= t <= b for a, b in segs)
+
+    new_main = sum(b - a for a, b in segs)
+    out = os.path.join(ep_dir, "src_cut.mp4")
+    vparts = "".join(f"[0:v]trim={a}:{b},setpts=PTS-STARTPTS[v{i}];" for i, (a, b) in enumerate(segs))
+    aparts = "".join(f"[0:a]atrim={a}:{b},asetpts=PTS-STARTPTS[a{i}];" for i, (a, b) in enumerate(segs))
+    ins = "".join(f"[v{i}][a{i}]" for i in range(len(segs)))
+    fc = f"{vparts}{aparts}{ins}concat=n={len(segs)}:v=1:a=1[v][a]"
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", video, "-filter_complex", fc,
+                    "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-crf", "16", "-preset", "fast",
+                    "-c:a", "aac", "-b:a", "192k", out], check=True)
+    print(f"컷편집: {len(segs)}구간 유지, 본편 {spec['main_duration']:.2f}s → {new_main:.2f}s")
+
+    kept = []
+    for d in spec.get("dialogue_subtitles", []):
+        if inside(d["start"]) or inside(d["end"]):
+            kept.append({**d, "start": remap(max(d["start"], segs[0][0])), "end": remap(d["end"])})
+    spec["dialogue_subtitles"] = [d for d in kept if d["end"] - d["start"] > 0.2]
+    for seg in spec["narration"]:
+        if seg["at"] < spec["main_duration"]:
+            seg["at"] = remap(seg["at"])
+        else:  # 엔드카드 구간 나레이션: 본편 길이 변화만큼 이동
+            seg["at"] = seg["at"] - spec["main_duration"] + new_main
+    spec["assets"]["sfx"]["at"] = remap(spec["assets"]["sfx"]["at"])
+    spec["main_duration"] = round(new_main, 3)
+    return out
+
+
 def main() -> None:
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     analyze_only = "--analyze" in sys.argv
@@ -219,6 +267,11 @@ def main() -> None:
     if analyze_only:
         analyze_speech(video, os.path.join(ep_dir, "speech_segments.txt"))
         return
+
+    video = apply_cuts(spec, video, ep_dir)
+    # 컷편집 후 재계산된 타임라인을 검수 스크립트가 읽을 수 있게 저장
+    with open(os.path.join(ep_dir, "spec.resolved.json"), "w", encoding="utf-8") as f:
+        json.dump(spec, f, ensure_ascii=False, indent=1)
 
     bgm = os.path.join(ep_dir, "src_bgm.mp3")
     sfx = os.path.join(ep_dir, "src_sfx.mp3")

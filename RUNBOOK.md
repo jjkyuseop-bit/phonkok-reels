@@ -38,6 +38,13 @@
 - 커밋/푸시 후 `compose` 워크플로 dispatch → 완료되면 Release `epNN_slug` 의 mp4·preview 를 받아 **프레임을 직접 보고** 제목/자막 위치·겹침·오타를 점검. 문제가 있으면 spec 수정 후 재실행.
 - 공개 URL: `https://github.com/jjkyuseop-bit/phonkok-reels/releases/download/epNN_slug/<output>.mp4`
 
+## 5.5 검수 (필수 — 통과 전에는 게시 금지)
+compose 워크플로는 Release 에 `qa/report.txt`, `qa/grid.jpg`(0.5초 간격 전체 프레임), `qa/sub_boundaries.jpg`(모든 자막 시작·끝 프레임)를 함께 올린다. 세 가지를 **반드시 직접 읽고 본다.**
+1. **규칙 점검**: report.txt 의 "점검 결과"에 항목이 있으면 전부 해소(제목 단어, 길이, 나레이션-대사 겹침, 자막 조각 길이). FORMAT.md 를 한 번 더 열어 레이아웃·색·폰트·나레이션 규칙과 대조.
+2. **자막 싱크**: sub_boundaries.jpg 에서 각 대사 자막이 그 인물이 입을 여는 프레임에 뜨고 닫을 때 사라지는지, 나레이션 조각이 발화와 맞는지 확인. 어긋나면 spec 의 start/end·at 을 Whisper 단어 시각 기준으로 수정.
+3. **영상 어색함 컷편집**: grid.jpg 를 보고 멈춘 듯한 프레임, 얼굴·손 왜곡, 의미 없이 늘어지는 구간, 대사 없이 입만 움직이는 구간, 장면 전환이 어색한 지점을 찾는다. 있으면 `spec.keep_segments` 에 **원본 시간 기준으로 유지할 구간만** 적어 잘라낸다(예: `[[0,6.4],[7.1,24]]`). 자막·나레이션·효과음 시각은 원본 시간 그대로 두면 compose 가 자동 변환한다. 컷은 대사 중간을 자르지 말고 호흡(침묵) 지점에서 자른다. 템포가 빠른 고퀄리티 바이럴 영상처럼 군더더기를 덜어내되 기승전결은 유지.
+4. 수정했으면 커밋·푸시 → compose 재실행 → 다시 5.5 처음부터. **점검 결과 "문제 없음" + 육안 이상 없음** 이 될 때까지 반복(최대 3회, 그래도 안 되면 영상 재생성 판단).
+
 ## 6. 게시 (Metricool, 확인 없이)
 - `createScheduledPost` 두 번: instagram(REEL, isAiGenerated=true, showReelOnFeed=true, videoCoverMilliseconds=훅 장면) / youtube(short, public, category COMEDY, isAiGeneratedContent=true, 제목 "{훅} {이모지} | 폰콕 #Shorts").
 - 게시 시각: 실행일(화) 오전 10:00 Asia/Seoul. 실행이 10시를 넘겼으면 가장 가까운 10분 단위 이후 시각.
