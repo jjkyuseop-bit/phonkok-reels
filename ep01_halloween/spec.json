@@ -1,32 +1,15 @@
 {
   "episode": "ep01_halloween",
   "output": "phonkok_ep01_halloween.mp4",
-  "width": 1920,
-  "height": 1080,
   "fps": 30,
   "font": "Noto Sans CJK KR",
-  "title": "핸드폰 매장에서 진짜 무서운 건 귀신이 아니었다",
+  "title": "핸드폰 매장에서 진짜 무서운 건\n귀신이 아니었다",
   "main_duration": 15.0,
-  "endcard": {
-    "file": "../endcard/endcard.mp4",
-    "duration": 6.0
-  },
+  "endcard": { "file": "../endcard/endcard.mp4", "duration": 6.0 },
   "assets": {
     "video": {
       "task_id": "fe53e049-913b-41e9-9e38-45ae8b38a2c2",
       "url": "https://dnznrvs05pmza.cloudfront.net/seedance_2_5/cgt-20261030182246-jgobe/Live_action_Korean_web_drama_comedy_sketch__photorealistic__cinematic_16_9__natural_film_look__shall.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNmVhNGNhNTQ0OWVhYmE3MyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ4MDY2MH0.iaCgCMzHvu8Bt5sujScy3NzoD_uUpT1H7g-y7UnkZjU"
-    },
-    "narration_main": {
-      "task_id": "f4ff3eb3-3bf7-4f51-8b9a-964998b8fbcd",
-      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/f4ff3eb3-3bf7-4f51-8b9a-964998b8fbcd/___EP01______A________BIS.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNjUwNmZmMWEzZjdkZjc3YyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ1MzMzOH0.A4hTvAAL0m1TRc9zfNYAhkT2fexQEfP6T9QS2L8XYD0",
-      "at": 0.3,
-      "duration": 9.92
-    },
-    "narration_end": {
-      "task_id": "026af4e2-3c3b-42da-bdd9-b41792f2da06",
-      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/026af4e2-3c3b-42da-bdd9-b41792f2da06/___EP01______B__________BIS.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMzRiNDg5N2MzNzZmNjdjMyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUyMDUwOH0.8iqBB8YOa0AudzxEj29KL62DPFXYrW0m5Dw171s7od0",
-      "at": 15.2,
-      "duration": 5.76
     },
     "bgm": {
       "task_id": "29522f72-b6a1-442c-8f59-a9eb00ce25ae",
@@ -35,48 +18,37 @@
     "sfx": {
       "task_id": "f5b541ce-14e7-4074-bf33-9a170d7431c2",
       "url": "https://dnznrvs05pmza.cloudfront.net/audio_sfx/24a1b545-ad4b-4aa3-8f48-fd425911a454/___EP01___________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOTZlYzRhMDdlYjcyYmUwNiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUyMDY0N30.5UaYI-Mx_KvJfmYr6aLo7NJ4Ma-1mnG5QM2fL7IluGM",
-      "at": 7.2
+      "at": 8.3
     }
   },
-  "narration_subtitles": [
+  "speech_windows_detected": "3.08-5.11 뱀파이어 인사 / 6.08-6.50 손님 대답 / 8.37-10.5 비명 / 11초 이후 대사 없음",
+  "narration": [
     {
-      "start": 0.3,
-      "end": 3.4,
-      "text": "할로윈 밤, 휴대폰 바꾸러\n매장에 들어갔다."
+      "at": 0.5,
+      "duration": 2.48,
+      "subtitle": "할로윈 밤, 폰 바꾸러 갔다.",
+      "task_id": "be85a418-b097-476d-bef6-ca7ad8b16c21",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/be85a418-b097-476d-bef6-ca7ad8b16c21/___EP01______N1__0_9s_.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYjI5ZTFhYzMwMGY5OWRlNCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ5OTU4N30.wENzvM6j-QA_21bu9whi7leCAdz4Wu9UXM6Y8cAi24Q"
     },
     {
-      "start": 3.7,
-      "end": 7.0,
-      "text": "직원이 좀… 이상했지만\n상관없었다."
+      "at": 11.2,
+      "duration": 3.04,
+      "subtitle": "직원보다 무서운 건…\n견적서였다.",
+      "task_id": "b7ba0b32-0ef2-40fb-8cb6-bbee4f77826c",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/b7ba0b32-0ef2-40fb-8cb6-bbee4f77826c/___EP01______N2__11s_.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNmUzMjIzZmE0NzNjNGJmNSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ4Mzc3MH0.mn84qMxkRNuDNsd1PBPnOn8wdqjRJIHcI74spt8ibo4"
     },
     {
-      "start": 7.3,
-      "end": 10.6,
-      "text": "진짜 공포는 견적서였다."
+      "at": 15.2,
+      "duration": 5.76,
+      "subtitle": "",
+      "task_id": "026af4e2-3c3b-42da-bdd9-b41792f2da06",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/026af4e2-3c3b-42da-bdd9-b41792f2da06/___EP01______B__________BIS.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMzRiNDg5N2MzNzZmNjdjMyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUyMDUwOH0.8iqBB8YOa0AudzxEj29KL62DPFXYrW0m5Dw171s7od0"
     }
   ],
   "dialogue_subtitles": [
-    {
-      "start": 3.4,
-      "end": 5.4,
-      "text": "어서오세요… 기기변경이시죠?"
-    },
-    {
-      "start": 5.5,
-      "end": 7.0,
-      "text": "네. 제일 싼 걸로요."
-    },
-    {
-      "start": 8.0,
-      "end": 10.5,
-      "text": "할부원금이… 백오십만 원?!"
-    }
+    { "start": 3.0, "end": 5.3, "text": "어서오세요… 기기변경이시죠?" },
+    { "start": 6.0, "end": 7.2, "text": "네. 제일 싼 걸로요." },
+    { "start": 8.3, "end": 10.6, "text": "할부원금이… 백오십만 원?!" }
   ],
-  "mix": {
-    "video_audio": 0.9,
-    "narration": 1.0,
-    "bgm_main": 0.18,
-    "bgm_end": 0.35,
-    "sfx": 0.8
-  }
+  "mix": { "video_audio": 0.9, "narration": 1.6, "bgm_main": 0.14, "bgm_end": 0.35, "sfx": 0.8, "duck": 0.3 }
 }

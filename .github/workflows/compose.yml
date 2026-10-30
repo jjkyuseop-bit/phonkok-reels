@@ -39,9 +39,9 @@ jobs:
         run: |
           EP="${{ inputs.episode }}"
           OUT=$(python3 -c "import json;print(json.load(open('$EP/spec.json'))['output'])")
-          ffmpeg -y -loglevel error -ss 4 -i "$EP/$OUT" -frames:v 1 "$EP/preview_a.jpg"
+          ffmpeg -y -loglevel error -ss 1.5 -i "$EP/$OUT" -frames:v 1 "$EP/preview_a.jpg"
           ffmpeg -y -loglevel error -ss 9 -i "$EP/$OUT" -frames:v 1 "$EP/preview_b.jpg"
-          ffmpeg -y -loglevel error -ss 17 -i "$EP/$OUT" -frames:v 1 "$EP/preview_c.jpg"
+          ffmpeg -y -loglevel error -ss 12.5 -i "$EP/$OUT" -frames:v 1 "$EP/preview_c.jpg"
           echo "OUT=$OUT" >> "$GITHUB_ENV"
 
       - name: Publish as release asset
