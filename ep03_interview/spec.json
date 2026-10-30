@@ -1,0 +1,21 @@
+{
+  "episode": "ep03_interview",
+  "output": "phonkok_ep03_interview.mp4",
+  "fps": 30,
+  "font_black": "Noto Sans CJK KR Black",
+  "font_regular": "Noto Sans CJK KR",
+  "title": "면접관이 나를\n[[다시 부른]] 이유",
+  "main_duration": 20.0,
+  "endcard": { "file": "../endcard/endcard.mp4", "duration": 6.0 },
+  "assets": {
+    "video": { "task_id": "4a062129-b8ee-49e0-84b1-e2c90cf984a5", "url": "https://dnznrvs05pmza.cloudfront.net/seedance_2_5/cgt-20261030211415-7lkzs/Live_action_Korean_office_comedy_web_drama__photorealistic__cinematic_16_9__natural_film_look__shall.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNjg4ZGNhZTRiYmNiMWM4ZiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUyMTM4MH0.o_Ft_aq7rndEP7cpvwh-RUUUs_trXm8uWb71He1JRJk" },
+    "bgm": { "task_id": "5dde41c0-98a1-4369-b142-c3058d9f5ea7", "url": "https://dnznrvs05pmza.cloudfront.net/lyria3-clip/5dde41c0-98a1-4369-b142-c3058d9f5ea7/___EP03_BGM.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZGZmZTE5M2ZiZjVmYWU3NiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ5NDk3NX0.UreV84qLqqhQ4z8wBvHMrFH3Kz1Ns0IANK7cNw7zO9M" },
+    "sfx": { "task_id": "fac180e6-5a2d-4c71-957d-762b47c0998a", "url": "https://dnznrvs05pmza.cloudfront.net/audio_sfx/2cd90145-96e4-47b7-9071-89016964abe6/___EP03________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZmE2OGRmZjAyODFjMDVlMSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ2ODI3Mn0.EbDKb2kss7I8i4FtmqKYZSxt2ry6vUbHAWSMQMFSZ4Q", "at": 3.5 }
+  },
+  "narration": [
+    { "at": 0.3, "duration": 2.8, "subtitle_chunks": ["면접…", "끝난 줄 알았다."], "task_id": "eec9e03a-935b-48c1-9518-79a474b0fae7", "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/eec9e03a-935b-48c1-9518-79a474b0fae7/EP03_N1_____.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZTI5NDZkNGMyMjQ5NGMyZCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUyODUyNH0.BnAFMZocujc8azSs6nUiGsSxewwKvGmhJP9zFrloJm4" },
+    { "at": 20.1, "duration": 6.0, "subtitle": "", "task_id": "c8fe4d15-c8ed-4cc4-990b-6b181c31e965", "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/c8fe4d15-c8ed-4cc4-990b-6b181c31e965/EP03__________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOTA5ZGEzODU4MTRiNDVhZSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ1NjUxN30.hJySkT0Uxa2XclI4ccwhs3UZ0_yIQ7ytn0A3lQMpONA" }
+  ],
+  "dialogue_subtitles": [],
+  "mix": { "video_audio": 1.0, "narration": 1.4, "bgm_main": 0.12, "bgm_end": 0.35, "sfx": 0.8, "duck": 0.45 }
+}
