@@ -46,28 +46,23 @@
   ],
   "dialogue_subtitles": [
     {
-      "start": 2.25,
-      "end": 3.32,
+      "start": 2.28,
+      "end": 2.9,
       "text": "잠깐만요."
     },
     {
-      "start": 3.35,
-      "end": 4.16,
-      "text": "…네?"
+      "start": 2.9,
+      "end": 3.4,
+      "text": "네."
     },
     {
-      "start": 10.75,
-      "end": 13.0,
-      "text": "폰, 어디서 샀어요?"
+      "start": 10.85,
+      "end": 11.55,
+      "text": "…샀어요?"
     },
     {
-      "start": 14.25,
-      "end": 16.62,
-      "text": "폰콕이요. 견적 받아서요."
-    },
-    {
-      "start": 16.65,
-      "end": 18.5,
+      "start": 16.5,
+      "end": 18.7,
       "text": "앱 이름이 뭐라고요?"
     }
   ],
@@ -78,43 +73,5 @@
     "bgm_end": 0.35,
     "sfx": 0.8,
     "duck": 0.45
-  },
-  "dubs": [
-    {
-      "start": 2.25,
-      "end": 2.9,
-      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/a8a9584c-8bc1-4963-814d-51ec10ca014c/EP03_L1_________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiY2EwZmY5OWIxMGFmM2ZhZSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ1ODk3MX0.TXQGrXB2ta4rUMXldwC2ZCFcWG6J2zIgQa13LWgdtrc",
-      "duration": 1.04,
-      "text": "잠깐만요."
-    },
-    {
-      "start": 3.35,
-      "end": 3.95,
-      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/1ffb0ec8-d88b-416e-ab26-a882198e7258/EP03_L2______.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZTkyMjc0YzlhNjM4MTA0YSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUxMjY0OX0.F88XLYC1T-pbyZXZPs2e1bXSZjWeppFb3ulKfEO8KRk",
-      "duration": 0.56,
-      "text": "…네?",
-      "mute_from": 2.85
-    },
-    {
-      "start": 10.75,
-      "end": 12.8,
-      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/234a7c4a-faf4-4467-b4c9-c51d666bdf04/EP03_________________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiY2RlMWM4NjY4YjlmYTcxMSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUxODE4Mn0.1F1jj2kxZf7jPlA5Z1QVgJPknZk4nbd_zQrF5xn-E_A",
-      "duration": 2.0,
-      "text": "폰, 어디서 샀어요?"
-    },
-    {
-      "start": 14.25,
-      "end": 16.5,
-      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/e9276e3e-af32-40aa-9043-d4fcbaa938ee/EP03_L4________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYjY3ZDVkZjkwYjc2NzA1ZiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ5MDE2OX0.ROL27c_4Q3lFDqja9JZPsJPot5q9oEe0ew-zmQy8kGA",
-      "duration": 2.24,
-      "text": "폰콕이요. 견적 받아서요."
-    },
-    {
-      "start": 16.65,
-      "end": 18.7,
-      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/3dff6074-d6da-45ea-95bc-9e4351d55f02/EP03_L5_________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNGI4MWNiYTY0MGY3YTU5MSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ5MTg3OH0.ZOESzlGZbVClYFgUfqoQIv728KEqlYHs058-Ibx3hJE",
-      "duration": 1.6,
-      "text": "앱 이름이 뭐라고요?"
-    }
-  ]
+  }
 }

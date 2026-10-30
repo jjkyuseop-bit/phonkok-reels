@@ -30,7 +30,7 @@
 - 나레이션: `search_voices`(ko)로 톤에 맞는 네이티브 보이스 선택, `generate_speech` eleven_v4, 문장 단위 조각. 본편엔 대사 없는 구간에만, 마무리 문장은 엔드카드 나레이션에.
 - BGM `generate_music` lyria-3-clip 30s / 효과음 `generate_sound_effect` 2~3s.
 - 크레딧: 20초 720p ≈ 600 + 오디오 ≈ 30 → 편당 ≈ 650.
-- 대사가 뭉개진 핵심 구간은 후시녹음(같은 문장 TTS → spec `dub` 로 그 구간 음성 교체)으로 수리. 그래도 안 되면 전체 재생성 1회.
+- **TTS 를 인물 입에 붙이는 수리(dubs) 금지.** 핵심 대사가 뭉개지면 대사를 더 줄여 전체 재생성 1회, 그래도 안 되면 나레이션 모드.
 
 ## 4. 분석 → 스펙 작성
 - `spec.json` 을 이전 에피소드 형식으로 작성 (assets.video.url 만 먼저 채워도 됨) → 커밋/푸시 → `analyze-speech` 워크플로 dispatch(episode=epNN_slug) → 완료 후 Release `analyze-epNN_slug` 의 `transcript.json`, `speech_segments.txt`, `contact_sheet.jpg` 를 `gh api -H "Accept: application/octet-stream" repos/.../releases/assets/<id>` 로 받는다.
