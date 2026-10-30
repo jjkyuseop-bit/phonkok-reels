@@ -6,9 +6,15 @@
   "font_regular": "Noto Sans CJK KR",
   "title": "엄마가 처음으로\n나한테 [[화낸]] 날",
   "main_duration": 24.0,
-  "endcard": { "file": "../endcard/endcard.mp4", "duration": 6.0 },
+  "endcard": {
+    "file": "../endcard/endcard.mp4",
+    "duration": 6.0
+  },
   "assets": {
-    "video": { "task_id": "4c978187-d64b-4e77-8084-dc7bc1913973", "url": "" },
+    "video": {
+      "task_id": "4c978187-d64b-4e77-8084-dc7bc1913973",
+      "url": ""
+    },
     "bgm": {
       "task_id": "9586609b-111e-4dca-aa68-b0c15d0add4d",
       "url": "https://dnznrvs05pmza.cloudfront.net/lyria3-clip/9586609b-111e-4dca-aa68-b0c15d0add4d/___EP02_BGM.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiODhmNWRkMDFhYzdhMjk0NiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ5NzQ3M30.inETj0y0HziSDjSg8Wocr-gRpOxY9d-rIUbaMWj0Kdw"
@@ -21,29 +27,51 @@
   },
   "narration": [
     {
-      "at": 0.4, "duration": 2.72,
-      "subtitle_chunks": ["효도하려고…", "큰맘 먹었다."],
+      "at": 0.4,
+      "duration": 2.72,
+      "subtitle_chunks": [
+        "효도하려고…",
+        "큰맘 먹었다."
+      ],
       "task_id": "b2a6d528-a49b-4b9d-83d0-7ceabd0af51e",
       "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/b2a6d528-a49b-4b9d-83d0-7ceabd0af51e/___EP02_N1.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOTU0NGFhMWJkYzM0OWNiMiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ5MjM3OX0.eeHeOrL3TGZqXLiLP4mHxtnyUA7XxGyR3ZayTt8SLXY"
     },
     {
-      "at": 14.0, "duration": 3.52,
-      "subtitle_chunks": ["엄마가…", "처음으로…", "화를 냈다."],
+      "at": 14.0,
+      "duration": 3.52,
+      "subtitle_chunks": [
+        "엄마가…",
+        "처음으로…",
+        "화를 냈다."
+      ],
       "task_id": "c2b82dfa-47a1-4bd9-b0c6-28951be826eb",
       "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/c2b82dfa-47a1-4bd9-b0c6-28951be826eb/___EP02_N2.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZDAyYjBiYTljMjI1MjEyNiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUxMjM2MX0.gqHHdmjRczl0MyTZNTRU6ehgCEiaEYt6IeGVfYorUFg"
     },
     {
-      "at": 21.0, "duration": 2.48,
-      "subtitle_chunks": ["효도는…", "견적부터."],
+      "at": 21.0,
+      "duration": 2.48,
+      "subtitle_chunks": [
+        "효도는…",
+        "견적부터."
+      ],
       "task_id": "2cd31f61-c5dc-4d6f-8f50-d19fdb19a73b",
       "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/2cd31f61-c5dc-4d6f-8f50-d19fdb19a73b/___EP02_N3.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiN2MwN2VhNmIzOTY0ZjlhNSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUyNzE0N30.YXwSM9UZ1VGhFdw_WTiyUw_bm5DPEvrTGMs9RIUgmdI"
     },
     {
-      "at": 24.2, "duration": 5.76, "subtitle": "",
-      "task_id": "026af4e2-3c3b-42da-bdd9-b41792f2da06",
-      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/026af4e2-3c3b-42da-bdd9-b41792f2da06/___EP01______B__________BIS.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMzRiNDg5N2MzNzZmNjdjMyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUyMDUwOH0.8iqBB8YOa0AudzxEj29KL62DPFXYrW0m5Dw171s7od0"
+      "at": 24.2,
+      "duration": 5.84,
+      "subtitle": "",
+      "task_id": "15477c02-715a-42fe-b8b4-088dc9075674",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/15477c02-715a-42fe-b8b4-088dc9075674/___EP02__________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZDVlNTIyM2FmZTBhYTkwZSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUxNzExNH0.EtFN_cRNJQDfem1Uq4zA0IHvrhT7oKXEpjU1jN-8rio"
     }
   ],
   "dialogue_subtitles": [],
-  "mix": { "video_audio": 1.0, "narration": 1.4, "bgm_main": 0.12, "bgm_end": 0.35, "sfx": 0.8, "duck": 0.45 }
+  "mix": {
+    "video_audio": 1.0,
+    "narration": 1.4,
+    "bgm_main": 0.12,
+    "bgm_end": 0.35,
+    "sfx": 0.8,
+    "duck": 0.45
+  }
 }
