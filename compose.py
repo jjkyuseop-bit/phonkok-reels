@@ -56,7 +56,7 @@ def build_ass(spec: dict, path: str) -> None:
     main_end = spec["main_duration"]
     # 위 띠 높이 656: 제목은 띠 아래쪽(영상 바로 위)에, 아래 띠: 대사는 띠 위쪽(영상 바로 아래)에
     title_margin_v = H - VY + 40           # 하단 기준 마진 → 제목 하단이 영상 위 40px
-    dlg_margin_v = VY + 40                 # 상단 기준 마진 → 대사 상단이 영상 아래 40px
+    dlg_margin_v = VY + VH + 40            # 상단 기준 마진 → 대사 상단이 영상 아래 40px (아래 검은 띠)
     header = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
