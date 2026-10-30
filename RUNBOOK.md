@@ -30,7 +30,7 @@
 
 ## 4. 분석 → 스펙 작성
 - `spec.json` 을 이전 에피소드 형식으로 작성 (assets.video.url 만 먼저 채워도 됨) → 커밋/푸시 → `analyze-speech` 워크플로 dispatch(episode=epNN_slug) → 완료 후 Release `analyze-epNN_slug` 의 `transcript.json`, `speech_segments.txt`, `contact_sheet.jpg` 를 `gh api -H "Accept: application/octet-stream" repos/.../releases/assets/<id>` 로 받는다.
-- transcript 의 단어 시각으로 `dialogue_subtitles` 를 쓰고(문장 단위, 내용은 실제 인식된 대사), 대사 사이 빈 구간에 나레이션 `at` 을 배치한다. 나레이션 `duration` 은 get_task 의 durationSeconds.
+- transcript 의 A/B 두 결과가 일치하는 단어만으로 `dialogue_subtitles` 를 쓴다(**대본 문구 금지, 미인식 구간은 자막 없음**). 시각은 단어 타임스탬프, 대사 사이 빈 구간에 나레이션 `at` 을 배치한다. 나레이션 `duration` 은 get_task 의 durationSeconds.
 - `subtitle_chunks` 로 나레이션 자막을 어절 단위로 쪼갠다.
 - 효과음 `at` 은 반전 발화 시작 시각.
 
