@@ -29,7 +29,7 @@ jobs:
       - name: Contact sheet
         run: |
           EP="${{ inputs.episode }}"
-          ffmpeg -y -loglevel error -i "$EP/src_video.mp4" -vf "fps=1,scale=480:-1,tile=5x3" "$EP/contact_sheet.jpg"
+          ffmpeg -y -loglevel error -i "$EP/src_video.mp4" -vf "fps=1,scale=480:-1,tile=6x5" -frames:v 1 "$EP/contact_sheet.jpg"
       - env:
           GH_TOKEN: ${{ github.token }}
         run: |
