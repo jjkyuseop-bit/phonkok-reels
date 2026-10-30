@@ -25,9 +25,9 @@ import sys
 import urllib.request
 
 W, H = 1080, 1920          # 세로 캔버스
-# 참고 릴스(phon.kok 2026-09-16) 실측: 영상 블록 약 1080x856 (≈5:4), 상단 띠 ~513px, 하단 띠 ~551px
-VW, VH = 1080, 856         # 영상 블록 크기 (16:9 소스는 높이 맞춰 확대 후 중앙 크롭)
-VY = 513                   # 영상 상단 y
+# 16:9 원본을 자르지 않고 가로 전체(1080x608)로 중앙 배치. 위아래 검은 띠 각 656px
+VW, VH = 1080, 608
+VY = (H - VH) // 2         # 656
 RED = "&H5548E8&"          # 폰콕 시그니처 #E84855 (ASS는 BGR)
 
 
@@ -179,11 +179,11 @@ def main() -> None:
     # 입력: 0 본편, 1 엔드카드, 2 BGM, 3 SFX, 4.. 나레이션들
     fc = []
     fc.append(
-        f"[0:v]trim=0:{main_d},setpts=PTS-STARTPTS,scale={VW}:{VH}:force_original_aspect_ratio=increase,"
-        f"crop={VW}:{VH},pad={W}:{H}:(ow-iw)/2:{VY}:black,setsar=1,format=yuv420p,fps={fps},subtitles='{ff_path(ass)}'[v0]"
+        f"[0:v]trim=0:{main_d},setpts=PTS-STARTPTS,scale={VW}:{VH}:force_original_aspect_ratio=decrease,"
+        f"pad={W}:{H}:(ow-iw)/2:{VY}:black,setsar=1,format=yuv420p,fps={fps},subtitles='{ff_path(ass)}'[v0]"
     )
     fc.append(
-        f"[1:v]scale={VW}:{VH}:force_original_aspect_ratio=increase,crop={VW}:{VH},"
+        f"[1:v]scale={VW}:{VH}:force_original_aspect_ratio=decrease,"
         f"pad={W}:{H}:(ow-iw)/2:{VY}:black,setsar=1,format=yuv420p,fps={fps},setpts=PTS-STARTPTS[v1]"
     )
     fc.append("[v0][v1]concat=n=2:v=1:a=0[v]")
