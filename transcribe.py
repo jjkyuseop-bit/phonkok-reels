@@ -16,7 +16,7 @@ model = WhisperModel("large-v3", device="cpu", compute_type="int8")
 segments, info = model.transcribe(
     video, language="ko", word_timestamps=True, vad_filter=True,
     vad_parameters={"min_silence_duration_ms": 250},
-    initial_prompt="휴대폰 매장. 어서오세요, 기기변경이시죠? 네, 제일 싼 걸로요. 할부원금이 백오십만 원?!",
+    initial_prompt=open(os.path.join(ep, "whisper_prompt.txt"), encoding="utf-8").read().strip() if os.path.exists(os.path.join(ep, "whisper_prompt.txt")) else "한국어 대화.",
 )
 out = []
 lines = []
