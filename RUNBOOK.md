@@ -8,6 +8,9 @@
 3. Metricool `getBrandSettings` 로 brand 7556654(phon.kok) 확인.
 4. `FORMAT.md` 와 `ep*/script.md` 전부 읽기 (소재 중복 방지).
 
+## 0.5 오늘 이미 예약된 영상이 있으면 생성하지 않는다
+- Metricool `getScheduledPosts`(오늘 00:00~23:59 Asia/Seoul)에 검수 완료된 릴스/숏츠가 이미 잡혀 있으면(예: 대표가 미리 검수한 편), **새 영상을 만들지 않는다.** 1단계 성과 기록과 알림만 하고 종료.
+
 ## 1. 지난 편 성과 확인
 - Metricool `getAnalyticsDataByMetrics` 로 지난 편(인스타 릴스·유튜브 숏츠) 조회수·도달·좋아요·저장·공유·댓글·평균 시청 시간을 가져온다.
 - 결과를 `reports/YYYY-MM-DD.md` 에 기록하고, 다음 편에 반영할 한 줄 교훈을 적는다 (예: 3초 이탈 높음 → 훅 더 세게).
@@ -20,13 +23,15 @@
 - 대사는 짧고 명확하게 3~5줄. 나레이션은 어절 단위 조각으로 설계하고 **대사와 겹치지 않는 구간**에만 배치할 계획을 세운다.
 - 새 폴더 `epNN_<slug>/` 에 `script.md` 작성.
 
-## 3. 생성 (Runway MCP)
-- 영상: `generate_video` model=seedance-2.5, ratio=16:9, resolution=1080p, generateAudio=true, duration 12 × 2클립(동일 인물·의상·장소 묘사 반복) 또는 단일 24s 이내. 프롬프트 끝: "No on-screen text, no captions, no logos. No music." 인물·핵심 동작은 중앙에.
-- 두 클립이면 `stitch_videos` 로 합쳐 하나의 taskId 를 만든다.
-- **생성 결과를 반드시 확인**: `get_task` 로 영상 URL을 얻고, 아래 4단계의 analyze 워크플로가 만드는 contact_sheet.jpg 와 transcript 를 보고 실제 화면·대사를 파악한 뒤에만 제목·나레이션·캡션을 확정한다. 프롬프트에 넣었지만 안 나온 장면은 쓰지 않는다.
-- 나레이션 목소리: `search_voices`(language=ko)에서 영상 톤에 맞는 네이티브 보이스 선택. `generate_speech` model=eleven_v4, 조각(문장) 단위로 각각 생성.
-- BGM: `generate_music` model=lyria-3-clip, 30초, 컨셉에 맞는 톤. 효과음: `generate_sound_effect` 반전 지점용 2~3초.
-- 크레딧 상한: 편당 1,100 크레딧. 넘길 것 같으면 해상도/길이를 줄인다.
+## 3. 생성 (Runway MCP) — v2: 레퍼런스 고정 + 샷 단위 + 대사 선녹음 (EP03부터 기본)
+1. **캐릭터 시트·배경 먼저**: `generate_image`(nano-banana-pro, 16:9)로 등장인물별 시트 1장(정면 클로즈업 + 3/4 전신, 밝은 회색 스튜디오 배경, "photorealistic cinematic still, Korean web-drama look, 35mm film texture") + 빈 세트 1장(와이드, 조명 방향 명시). taskId 를 기록. **브라우저나 뷰어로 반드시 눈으로 확인** 후 진행(얼굴 왜곡·엉뚱한 의상이면 재생성).
+2. **대사 선녹음**: 캐릭터마다 다른 한국어 네이티브 보이스(`search_voices`), `generate_speech` eleven_v4 로 한 줄씩. **각 파일 1.8초 이상**이어야 referenceAudio 로 쓸 수 있음 → 짧은 대사는 "아…", "잠깐…" 같은 자연스러운 호흡을 앞에 붙여 녹음. durationSeconds 기록.
+3. **샷 생성**: 샷당 4~6초, `generate_video` seedance-2.5 / 720p / 16:9 / generateAudio true / `referenceImages` = [캐릭터 시트들(tag), 배경(tag)] / `referenceAudio` = 그 샷의 대사 1개(durationSeconds 포함). 프롬프트: 공통 헤더(화질·조명·@room·@캐릭터 설명) + 그 샷의 연기 지시 + '"audio 1" (대사)' 를 말한다고 명시 + "lips in sync" + 침묵 구간(대사 전 1~2초) + 인물은 프레임 중앙 + "No music, no on-screen text". 대사 없는 샷은 referenceAudio 없이.
+4. 본편 합계 22~24초가 되게 샷 길이를 배분(예: 5+5+6+5+4). 나레이션은 대사 없는 침묵 구간(보통 S1 앞 2초)과 엔드카드에만.
+5. `stitch_videos`(cut)로 샷을 순서대로 이어 하나의 taskId/URL 로 만든다. 샷 경계 시각(누적 길이)을 기록 → 대사 자막은 **녹음 텍스트 그대로**, 시각은 analyze-speech 의 Whisper 단어 시각으로 맞춘다(내용은 Whisper 가 아니라 녹음 텍스트가 정답).
+6. 나레이션(`generate_speech`), BGM(`generate_music` lyria-3-clip 30s), 효과음(`generate_sound_effect`) 은 기존과 동일.
+7. 비용 가이드: 이미지 3장 ≈ 30~50, 샷 5개(24초, 720p) ≈ 700, 음성 ≈ 30 → 편당 ≈ 800~900 크레딧.
+8. 잘못 나온 샷은 **그 샷만 재생성**(레퍼런스가 고정돼 있어 교체해도 티 안 남) 후 다시 stitch.
 
 ## 4. 분석 → 스펙 작성
 - `spec.json` 을 이전 에피소드 형식으로 작성 (assets.video.url 만 먼저 채워도 됨) → 커밋/푸시 → `analyze-speech` 워크플로 dispatch(episode=epNN_slug) → 완료 후 Release `analyze-epNN_slug` 의 `transcript.json`, `speech_segments.txt`, `contact_sheet.jpg` 를 `gh api -H "Accept: application/octet-stream" repos/.../releases/assets/<id>` 로 받는다.
