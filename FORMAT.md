@@ -15,14 +15,18 @@
 - 화질: "live-action Korean web-drama, photorealistic, natural film look, shallow DOF, practical lighting" 고정 문구
 - 프롬프트 끝에 항상: "No on-screen text, no captions, no logos. No music."
 
-## 텍스트 레이어 (PC 합성, compose.py)
-- 상단: 어그로 제목 (노란색, 64px, 본편 전 구간 고정)
-- 가운데: 나레이션 자막 (흰색, 78px, 큰 글씨)
-- 하단: 대사 자막 (흰색, 50px)
+## 출력 캔버스와 텍스트 레이어 (compose.py, GitHub Actions에서 합성)
+- **출력은 세로 1080x1920.** 가로 16:9 본편을 1080x608로 축소해 세로 캔버스 가운데에 배치 → 위아래 검은 띠 생김
+- 위 검은 띠: 어그로 제목 (노란색 62px, 2줄 허용, 영상 바로 위에 붙임, 본편 전 구간 고정)
+- 영상 가운데: 나레이션 자막 (흰색 60px, 외곽선)
+- 아래 검은 띠: 캐릭터 대사 자막 (흰색 50px, 영상 바로 아래에 붙임)
+- 엔드카드도 같은 방식으로 가운데 배치
 - 폰트: Noto Sans CJK KR Bold (GitHub Actions 기준; 참고 영상 폰트 확인 후 교체 가능)
 - 엔드카드 구간에는 자막 없음 (카드 자체가 문구)
 
 ## 오디오
+- **나레이션은 캐릭터 대사와 절대 겹치지 않게**: 합성 전 `analyze-speech` 워크플로로 본편 음성 구간을 뽑고, 빈 구간에만 나레이션 세그먼트를 배치. 세그먼트는 문장 단위로 따로 생성(각각 at/duration 지정)
+- 나레이션 라우드니스 정규화(-14 LUFS) + 1.6배, 나레이션 구간에서 원음·BGM 자동 더킹(0.3)
 - 나레이션: **eleven_v4 / voiceId `FxQ4qAZWVmPFbNVnnSel` (BIS, 한국어 네이티브, 차분·지적 톤) 고정** / languageCode ko. 영어권 프리셋(Benjamin 등) 사용 금지. **본편용(A)과 엔드카드용(B) 두 파일로 분리 생성**. 대본에 '…'와 쉼표로 호흡 설계, 문장은 짧게
 - BGM: lyria-3-clip 30초, 컨셉에 맞는 코믹 톤. 본편 0.18 / 엔드카드 0.35 볼륨
 - 효과음: 반전 지점 1개 이상 (eleven sound effects, 2~3초)
