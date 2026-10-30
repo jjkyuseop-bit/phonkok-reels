@@ -242,10 +242,21 @@ def apply_cuts(spec: dict, video: str, ep_dir: str) -> str:
                     "-c:a", "aac", "-b:a", "192k", out], check=True)
     print(f"컷편집: {len(segs)}구간 유지, 본편 {spec['main_duration']:.2f}s → {new_main:.2f}s")
 
+    def seg_of(t):
+        for (a, b), o in zip(segs, starts):
+            if a <= t <= b:
+                return (a, b, o)
+        return None
+
     kept = []
     for d in spec.get("dialogue_subtitles", []):
-        if inside(d["start"]) or inside(d["end"]):
-            kept.append({**d, "start": remap(d["start"]), "end": remap(d["end"])})
+        sg = seg_of(d["start"]) or seg_of(d["end"])
+        if not sg:
+            continue
+        a, b, o = sg
+        st = o + (max(d["start"], a) - a)
+        en = o + (min(d["end"], b) - a)   # 컷 경계를 넘는 자막은 경계에서 자름
+        kept.append({**d, "start": st, "end": en})
     spec["dialogue_subtitles"] = [d for d in kept if d["end"] - d["start"] > 0.2]
     for seg in spec["narration"]:
         if seg["at"] < spec["main_duration"]:
