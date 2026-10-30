@@ -1,0 +1,35 @@
+name: probe-speech
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "에피소드 폴더명 (epNN/probe_segments.json 필요)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q faster-whisper
+      - name: Download source video
+        run: python3 compose.py "${{ inputs.episode }}" --analyze
+      - name: Probe
+        run: python3 probe.py "${{ inputs.episode }}" "${{ inputs.episode }}/probe_segments.json"
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          EP="${{ inputs.episode }}"
+          TAG="probe-$EP"
+          gh release delete "$TAG" --yes --cleanup-tag 2>/dev/null || true
+          gh release create "$TAG" --title "$TAG" --notes "미인식 구간 집중 분석" "$EP/probe.txt" "$EP/probe.json"
