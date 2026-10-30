@@ -20,10 +20,10 @@
     "sfx": {
       "task_id": "f5b541ce-14e7-4074-bf33-9a170d7431c2",
       "url": "https://dnznrvs05pmza.cloudfront.net/audio_sfx/24a1b545-ad4b-4aa3-8f48-fd425911a454/___EP01___________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOTZlYzRhMDdlYjcyYmUwNiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUyMDY0N30.5UaYI-Mx_KvJfmYr6aLo7NJ4Ma-1mnG5QM2fL7IluGM",
-      "at": 8.3
+      "at": 7.45
     }
   },
-  "speech_windows_detected": "3.08-5.11 뱀파이어 인사 / 6.08-6.50 손님 대답 / 8.37-10.5 비명 / 11초 이후 대사 없음",
+  "speech_windows_detected": "Whisper: 3.12-5.02 어서오세요 기기변경이시죠 / 5.12-6.64 네 제일 싼 걸로요 / 7.48-9.08 할부원금이 백오십만 원 / 이후 대사 없음",
   "narration": [
     {
       "at": 0.5,
@@ -49,18 +49,18 @@
   ],
   "dialogue_subtitles": [
     {
-      "start": 3.0,
-      "end": 5.3,
+      "start": 3.1,
+      "end": 5.05,
       "text": "어서오세요… 기기변경이시죠?"
     },
     {
-      "start": 6.0,
-      "end": 7.2,
+      "start": 5.12,
+      "end": 6.7,
       "text": "네. 제일 싼 걸로요."
     },
     {
-      "start": 8.3,
-      "end": 10.6,
+      "start": 7.45,
+      "end": 9.3,
       "text": "할부원금이… 백오십만 원?!"
     }
   ],
