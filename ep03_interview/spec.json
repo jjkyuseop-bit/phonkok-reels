@@ -6,16 +6,115 @@
   "font_regular": "Noto Sans CJK KR",
   "title": "면접관이 나를\n[[다시 부른]] 이유",
   "main_duration": 20.0,
-  "endcard": { "file": "../endcard/endcard.mp4", "duration": 6.0 },
+  "endcard": {
+    "file": "../endcard/endcard.mp4",
+    "duration": 6.0
+  },
   "assets": {
-    "video": { "task_id": "4a062129-b8ee-49e0-84b1-e2c90cf984a5", "url": "https://dnznrvs05pmza.cloudfront.net/seedance_2_5/cgt-20261030211415-7lkzs/Live_action_Korean_office_comedy_web_drama__photorealistic__cinematic_16_9__natural_film_look__shall.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNjg4ZGNhZTRiYmNiMWM4ZiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUyMTM4MH0.o_Ft_aq7rndEP7cpvwh-RUUUs_trXm8uWb71He1JRJk" },
-    "bgm": { "task_id": "5dde41c0-98a1-4369-b142-c3058d9f5ea7", "url": "https://dnznrvs05pmza.cloudfront.net/lyria3-clip/5dde41c0-98a1-4369-b142-c3058d9f5ea7/___EP03_BGM.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZGZmZTE5M2ZiZjVmYWU3NiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ5NDk3NX0.UreV84qLqqhQ4z8wBvHMrFH3Kz1Ns0IANK7cNw7zO9M" },
-    "sfx": { "task_id": "fac180e6-5a2d-4c71-957d-762b47c0998a", "url": "https://dnznrvs05pmza.cloudfront.net/audio_sfx/2cd90145-96e4-47b7-9071-89016964abe6/___EP03________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZmE2OGRmZjAyODFjMDVlMSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ2ODI3Mn0.EbDKb2kss7I8i4FtmqKYZSxt2ry6vUbHAWSMQMFSZ4Q", "at": 3.5 }
+    "video": {
+      "task_id": "4a062129-b8ee-49e0-84b1-e2c90cf984a5",
+      "url": "https://dnznrvs05pmza.cloudfront.net/seedance_2_5/cgt-20261030211415-7lkzs/Live_action_Korean_office_comedy_web_drama__photorealistic__cinematic_16_9__natural_film_look__shall.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNjg4ZGNhZTRiYmNiMWM4ZiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUyMTM4MH0.o_Ft_aq7rndEP7cpvwh-RUUUs_trXm8uWb71He1JRJk"
+    },
+    "bgm": {
+      "task_id": "5dde41c0-98a1-4369-b142-c3058d9f5ea7",
+      "url": "https://dnznrvs05pmza.cloudfront.net/lyria3-clip/5dde41c0-98a1-4369-b142-c3058d9f5ea7/___EP03_BGM.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZGZmZTE5M2ZiZjVmYWU3NiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ5NDk3NX0.UreV84qLqqhQ4z8wBvHMrFH3Kz1Ns0IANK7cNw7zO9M"
+    },
+    "sfx": {
+      "task_id": "fac180e6-5a2d-4c71-957d-762b47c0998a",
+      "url": "https://dnznrvs05pmza.cloudfront.net/audio_sfx/2cd90145-96e4-47b7-9071-89016964abe6/___EP03________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZmE2OGRmZjAyODFjMDVlMSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ2ODI3Mn0.EbDKb2kss7I8i4FtmqKYZSxt2ry6vUbHAWSMQMFSZ4Q",
+      "at": 3.0
+    }
   },
   "narration": [
-    { "at": 0.3, "duration": 2.8, "subtitle_chunks": ["면접…", "끝난 줄 알았다."], "task_id": "eec9e03a-935b-48c1-9518-79a474b0fae7", "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/eec9e03a-935b-48c1-9518-79a474b0fae7/EP03_N1_____.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZTI5NDZkNGMyMjQ5NGMyZCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUyODUyNH0.BnAFMZocujc8azSs6nUiGsSxewwKvGmhJP9zFrloJm4" },
-    { "at": 20.1, "duration": 6.0, "subtitle": "", "task_id": "c8fe4d15-c8ed-4cc4-990b-6b181c31e965", "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/c8fe4d15-c8ed-4cc4-990b-6b181c31e965/EP03__________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOTA5ZGEzODU4MTRiNDVhZSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ1NjUxN30.hJySkT0Uxa2XclI4ccwhs3UZ0_yIQ7ytn0A3lQMpONA" }
+    {
+      "at": 5.8,
+      "duration": 2.8,
+      "subtitle_chunks": [
+        "면접…",
+        "끝난 줄 알았다."
+      ],
+      "task_id": "eec9e03a-935b-48c1-9518-79a474b0fae7",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/eec9e03a-935b-48c1-9518-79a474b0fae7/EP03_N1_____.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZTI5NDZkNGMyMjQ5NGMyZCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUyODUyNH0.BnAFMZocujc8azSs6nUiGsSxewwKvGmhJP9zFrloJm4"
+    },
+    {
+      "at": 20.1,
+      "duration": 6.0,
+      "subtitle": "",
+      "task_id": "c8fe4d15-c8ed-4cc4-990b-6b181c31e965",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/c8fe4d15-c8ed-4cc4-990b-6b181c31e965/EP03__________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOTA5ZGEzODU4MTRiNDVhZSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ1NjUxN30.hJySkT0Uxa2XclI4ccwhs3UZ0_yIQ7ytn0A3lQMpONA"
+    }
   ],
-  "dialogue_subtitles": [],
-  "mix": { "video_audio": 1.0, "narration": 1.4, "bgm_main": 0.12, "bgm_end": 0.35, "sfx": 0.8, "duck": 0.45 }
+  "dialogue_subtitles": [
+    {
+      "start": 2.25,
+      "end": 3.54,
+      "text": "잠깐만요."
+    },
+    {
+      "start": 3.35,
+      "end": 4.16,
+      "text": "…네?"
+    },
+    {
+      "start": 10.75,
+      "end": 13.0,
+      "text": "폰, 어디서 샀어요?"
+    },
+    {
+      "start": 14.25,
+      "end": 16.74,
+      "text": "폰콕이요. 견적 받아서요."
+    },
+    {
+      "start": 16.65,
+      "end": 18.5,
+      "text": "앱 이름이 뭐라고요?"
+    }
+  ],
+  "mix": {
+    "video_audio": 1.0,
+    "narration": 1.4,
+    "bgm_main": 0.12,
+    "bgm_end": 0.35,
+    "sfx": 0.8,
+    "duck": 0.45
+  },
+  "dubs": [
+    {
+      "start": 2.25,
+      "end": 2.9,
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/a8a9584c-8bc1-4963-814d-51ec10ca014c/EP03_L1_________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiY2EwZmY5OWIxMGFmM2ZhZSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ1ODk3MX0.TXQGrXB2ta4rUMXldwC2ZCFcWG6J2zIgQa13LWgdtrc",
+      "duration": 1.04,
+      "text": "잠깐만요."
+    },
+    {
+      "start": 3.35,
+      "end": 3.95,
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/1ffb0ec8-d88b-416e-ab26-a882198e7258/EP03_L2______.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZTkyMjc0YzlhNjM4MTA0YSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUxMjY0OX0.F88XLYC1T-pbyZXZPs2e1bXSZjWeppFb3ulKfEO8KRk",
+      "duration": 0.56,
+      "text": "…네?",
+      "mute_from": 2.85
+    },
+    {
+      "start": 10.75,
+      "end": 12.8,
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/234a7c4a-faf4-4467-b4c9-c51d666bdf04/EP03_________________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiY2RlMWM4NjY4YjlmYTcxMSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUxODE4Mn0.1F1jj2kxZf7jPlA5Z1QVgJPknZk4nbd_zQrF5xn-E_A",
+      "duration": 2.0,
+      "text": "폰, 어디서 샀어요?"
+    },
+    {
+      "start": 14.25,
+      "end": 16.5,
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/e9276e3e-af32-40aa-9043-d4fcbaa938ee/EP03_L4________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYjY3ZDVkZjkwYjc2NzA1ZiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ5MDE2OX0.ROL27c_4Q3lFDqja9JZPsJPot5q9oEe0ew-zmQy8kGA",
+      "duration": 2.24,
+      "text": "폰콕이요. 견적 받아서요."
+    },
+    {
+      "start": 16.65,
+      "end": 18.7,
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/3dff6074-d6da-45ea-95bc-9e4351d55f02/EP03_L5_________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNGI4MWNiYTY0MGY3YTU5MSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ5MTg3OH0.ZOESzlGZbVClYFgUfqoQIv728KEqlYHs058-Ibx3hJE",
+      "duration": 1.6,
+      "text": "앱 이름이 뭐라고요?"
+    }
+  ]
 }

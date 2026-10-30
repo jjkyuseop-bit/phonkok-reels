@@ -334,7 +334,7 @@ def main() -> None:
     dubs = spec.get("dubs", [])
     mute_expr = ""
     if dubs:
-        conds_m = "+".join(f"between(t,{d['start']-0.05},{d['end']+0.05})" for d in dubs)
+        conds_m = "+".join(f"between(t,{d.get('mute_from', d['start'])-0.05},{d['end']+0.05})" for d in dubs)
         mute_expr = f"volume='if(gt({conds_m},0),0.08,1)':eval=frame,"
     fc.append(
         f"[0:a]atrim=0:{main_d},asetpts=PTS-STARTPTS,loudnorm=I=-15:TP=-1.5:LRA=9,aresample=48000,aformat=channel_layouts=stereo,volume={mix['video_audio']},"
