@@ -39,7 +39,31 @@ def run(**kw):
 A = run(beam_size=8, best_of=8, temperature=0.0)
 B = run(beam_size=5, temperature=[0.0, 0.2, 0.4])
 
-json.dump({"A": A, "B": B}, open(os.path.join(ep, "transcript.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+# C: 에너지 기반 음성 구간(speech_segments.txt)별 개별 인식 — 짧은 한국어 대사는 전체 통과보다 구간 단위가 훨씬 잘 잡힌다
+C = []
+seg_file = os.path.join(ep, "speech_segments.txt")
+if os.path.exists(seg_file):
+    for line in open(seg_file, encoding="utf-8"):
+        if not line.startswith("speech"):
+            continue
+        _, a, b = line.split()
+        a, b = max(0.0, float(a) - 0.25), float(b) + 0.35
+        part = os.path.join(ep, "seg.wav")
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", video, "-vn", "-ac", "1", "-ar", "16000",
+                        "-ss", f"{a:.2f}", "-to", f"{b:.2f}", "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", part], check=True)
+        res = []
+        for kw in ({"beam_size": 8, "temperature": 0.0}, {"beam_size": 5, "temperature": [0.0, 0.2, 0.4]}):
+            segs, _ = model.transcribe(part, language="ko", word_timestamps=True, vad_filter=False,
+                                       condition_on_previous_text=False, **kw)
+            txt, words = [], []
+            for sg in segs:
+                txt.append(sg.text.strip())
+                for w in (sg.words or []):
+                    words.append({"w": w.word, "s": round(a + w.start, 2), "e": round(a + w.end, 2), "p": round(w.probability, 2)})
+            res.append({"text": " ".join(txt), "words": words})
+        C.append({"start": round(a, 2), "end": round(b, 2), "A": res[0], "B": res[1]})
+
+json.dump({"A": A, "B": B, "C": C}, open(os.path.join(ep, "transcript.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 lines = ["=== A (beam 8, temp 0) ==="]
 lines += [f"{s['start']:6.2f} - {s['end']:6.2f}  {s['text']}   (lp {s['avg_logprob']})" for s in A]
 lines += ["", "=== B (beam 5, temp fallback) ==="]
@@ -47,5 +71,9 @@ lines += [f"{s['start']:6.2f} - {s['end']:6.2f}  {s['text']}   (lp {s['avg_logpr
 lines += ["", "=== A words ==="]
 for s in A:
     lines.append(" ".join(f"{w['w'].strip()}[{w['s']}-{w['e']}:{w['p']}]" for w in s["words"]))
+lines += ["", "=== C (구간별 개별 인식: 시작-끝 | A | B) ==="]
+for c in C:
+    lines.append(f"{c['start']:6.2f} - {c['end']:6.2f}  A: {c['A']['text']}   | B: {c['B']['text']}")
+    lines.append("        " + " ".join(f"{w['w'].strip()}[{w['s']}-{w['e']}:{w['p']}]" for w in c["A"]["words"]))
 open(os.path.join(ep, "transcript.txt"), "w", encoding="utf-8").write("\n".join(lines) + "\n")
 print("\n".join(lines))

@@ -178,7 +178,7 @@ def analyze_speech(video: str, out_txt: str) -> None:
     """본편 오디오에서 음성(대사) 구간을 추정해 기록. 300~3400Hz 대역 통과 후 silencedetect."""
     cmd = [
         "ffmpeg", "-hide_banner", "-i", video, "-vn",
-        "-af", "highpass=f=300,lowpass=f=3400,silencedetect=noise=-28dB:d=0.35",
+        "-af", "highpass=f=300,lowpass=f=3400,silencedetect=noise=-30dB:d=0.3",
         "-f", "null", "-",
     ]
     r = subprocess.run(cmd, capture_output=True, text=True)
