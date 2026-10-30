@@ -55,7 +55,8 @@ def esc(text: str) -> str:
 
 def title_markup(text: str) -> str:
     """제목에서 [[빨강]] 표기를 ASS 색 오버라이드로 변환."""
-    return esc(text).replace("[[", "{\\c" + RED + "}").replace("]]", "{\\c&HFFFFFF&}")
+    # 빨강 포인트 단어는 색 + 더 큰 크기(132px)로 강조, 이후 흰색 110px 복귀
+    return esc(text).replace("[[", "{\\c" + RED + "\\fs132}").replace("]]", "{\\c&HFFFFFF&\\fs110}")
 
 
 def build_ass(spec: dict, path: str, narr_files=None) -> None:
@@ -78,7 +79,7 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Title,{font_black},110,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,-2,0,1,0,0,2,40,40,{title_margin_v},1
-Style: Narr,{font_black},86,&H00FFFFFF,&H000000FF,&H00000000,&H90000000,0,0,0,0,100,100,-1,0,1,0,3,5,30,30,0,1
+Style: Narr,{font_black},90,&H00FFFFFF,&H000000FF,&H00FFFFFF,&H90000000,-1,0,0,0,100,100,-1,0,1,1.5,3,5,30,30,0,1
 Style: Dlg,{font_regular},46,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,8,60,60,{dlg_margin_v},1
 
 [Events]
