@@ -22,50 +22,74 @@
     "sfx": {
       "task_id": "e984a8a8-44de-4cec-870d-6cebb3114b73",
       "url": "https://dnznrvs05pmza.cloudfront.net/audio_sfx/3a5a641f-111a-41f0-a4cb-293b51a79420/___EP02______.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZGM2YTljZTY2NjQzODVmMiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ1OTMwMn0.VboNJQhaPJmBpp15vTSbxCK1ICqyj1lqyY_ZU5Fv2jg",
-      "at": 11.0
+      "at": 13.9
     }
   },
   "narration": [
     {
-      "at": 0.4,
-      "duration": 2.72,
+      "at": 0.3,
+      "duration": 1.2,
       "subtitle_chunks": [
-        "효도하려고…",
-        "큰맘 먹었다."
+        "효도하려고."
       ],
-      "task_id": "b2a6d528-a49b-4b9d-83d0-7ceabd0af51e",
-      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/b2a6d528-a49b-4b9d-83d0-7ceabd0af51e/___EP02_N1.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOTU0NGFhMWJkYzM0OWNiMiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ5MjM3OX0.eeHeOrL3TGZqXLiLP4mHxtnyUA7XxGyR3ZayTt8SLXY"
+      "task_id": "eb3f9474-beeb-4332-a66c-599bed7edc2c",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/eb3f9474-beeb-4332-a66c-599bed7edc2c/___EP02_N1___.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZmYwMGNiNzIzNTg4YTExZiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ2NDU2Mn0.utV6dD0yoJ_ywcf2x01QdrOO8XRBBL87z9WA1vT_cIQ"
     },
     {
-      "at": 14.0,
-      "duration": 3.52,
+      "at": 11.4,
+      "duration": 2.0,
       "subtitle_chunks": [
-        "엄마가…",
-        "처음으로…",
+        "엄마가,",
         "화를 냈다."
       ],
-      "task_id": "c2b82dfa-47a1-4bd9-b0c6-28951be826eb",
-      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/c2b82dfa-47a1-4bd9-b0c6-28951be826eb/___EP02_N2.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZDAyYjBiYTljMjI1MjEyNiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUxMjM2MX0.gqHHdmjRczl0MyTZNTRU6ehgCEiaEYt6IeGVfYorUFg"
+      "task_id": "5e52ac14-f847-4855-ae5c-b6b57b8ea0a5",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/5e52ac14-f847-4855-ae5c-b6b57b8ea0a5/___EP02_N2___.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNjI2ZWM0NjJkYmM2MjA5YyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ2ODAwMn0._GUJwiO43snWpqRGvHJNJGDS_vTSZmPA5_HMHpRVrp8"
     },
     {
-      "at": 21.0,
-      "duration": 2.48,
-      "subtitle_chunks": [
-        "효도는…",
-        "견적부터."
-      ],
-      "task_id": "2cd31f61-c5dc-4d6f-8f50-d19fdb19a73b",
-      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/2cd31f61-c5dc-4d6f-8f50-d19fdb19a73b/___EP02_N3.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiN2MwN2VhNmIzOTY0ZjlhNSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUyNzE0N30.YXwSM9UZ1VGhFdw_WTiyUw_bm5DPEvrTGMs9RIUgmdI"
-    },
-    {
-      "at": 24.2,
-      "duration": 5.84,
+      "at": 24.3,
+      "duration": 5.12,
       "subtitle": "",
-      "task_id": "15477c02-715a-42fe-b8b4-088dc9075674",
-      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/15477c02-715a-42fe-b8b4-088dc9075674/___EP02__________.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZDVlNTIyM2FmZTBhYTkwZSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzUxNzExNH0.EtFN_cRNJQDfem1Uq4zA0IHvrhT7oKXEpjU1jN-8rio"
+      "task_id": "6420752c-69d9-439b-86ac-95627359b2fb",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/6420752c-69d9-439b-86ac-95627359b2fb/___EP02___________v2.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOGE4MGJlMjViM2U2MTc0NyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ1NjI5M30.oyc4JDzglJItFiXjBts9s5u-V-pnDp8VEhiSPOdEO18"
     }
   ],
-  "dialogue_subtitles": [],
+  "dialogue_subtitles": [
+    {
+      "start": 1.7,
+      "end": 3.9,
+      "text": "엄마… 선물."
+    },
+    {
+      "start": 5.5,
+      "end": 8.9,
+      "text": "어머, 뭐야? 얼마 줬어?"
+    },
+    {
+      "start": 9.1,
+      "end": 11.1,
+      "text": "그냥… 월 팔만 구천 원?"
+    },
+    {
+      "start": 14.1,
+      "end": 15.3,
+      "text": "뭐?!"
+    },
+    {
+      "start": 15.5,
+      "end": 18.5,
+      "text": "할부원금이 얼마냐고!"
+    },
+    {
+      "start": 19.4,
+      "end": 20.7,
+      "text": "…백육십…?"
+    },
+    {
+      "start": 20.8,
+      "end": 23.6,
+      "text": "여기선 오십이야, 오십!"
+    }
+  ],
   "mix": {
     "video_audio": 1.0,
     "narration": 1.4,
@@ -73,5 +97,6 @@
     "bgm_end": 0.35,
     "sfx": 0.8,
     "duck": 0.45
-  }
+  },
+  "speech_windows_detected": "energy 1.74-2.05/3.41-3.76/5.24-5.87/6.27-8.92/10.22-11.06/14.16-14.86/15.49-18.42/20.50-21.70/22.24-24.06; whisper 2.47-3.87 고 / 5.56-8.84 야 뭐야 얼마 줬어 / 9.11-11.06 그냥 월 89,000원 / 17.21-18.94 160 뭐 / 19.49-20.72 원 160 / 20.72-23.5 여기서는 50이야 50"
 }
