@@ -86,9 +86,15 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     lines = [header]
     lines.append(f"Dialogue: 0,{ass_time(0)},{ass_time(main_end)},Title,,0,0,0,,{title_markup(spec['title'])}\n")
+    dlg_starts = sorted(d["start"] for d in spec.get("dialogue_subtitles", []))
     for seg in spec["narration"]:
         if seg.get("subtitle"):
-            lines.append(f"Dialogue: 1,{ass_time(seg['at'])},{ass_time(seg['at'] + seg['duration'] + 0.3)},Narr,,0,0,0,,{esc(seg['subtitle'])}\n")
+            end = seg["at"] + seg["duration"] + 0.3
+            # 다음 대사 자막이 시작되기 전에 나레이션 자막은 반드시 사라져야 함
+            nxt = [t for t in dlg_starts if t > seg["at"]]
+            if nxt:
+                end = min(end, nxt[0] - 0.08)
+            lines.append(f"Dialogue: 1,{ass_time(seg['at'])},{ass_time(end)},Narr,,0,0,0,,{esc(seg['subtitle'])}\n")
     for d in spec.get("dialogue_subtitles", []):
         text = d["text"] if d["text"].startswith("- ") else "- " + d["text"]
         lines.append(f"Dialogue: 2,{ass_time(d['start'])},{ass_time(d['end'])},Dlg,,0,0,0,,{esc(text)}\n")
