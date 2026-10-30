@@ -30,14 +30,23 @@
       "duration": 2.48,
       "subtitle": "할로윈 밤, 폰 바꾸러 갔다.",
       "task_id": "be85a418-b097-476d-bef6-ca7ad8b16c21",
-      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/be85a418-b097-476d-bef6-ca7ad8b16c21/___EP01______N1__0_9s_.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYjI5ZTFhYzMwMGY5OWRlNCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ5OTU4N30.wENzvM6j-QA_21bu9whi7leCAdz4Wu9UXM6Y8cAi24Q"
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/be85a418-b097-476d-bef6-ca7ad8b16c21/___EP01______N1__0_9s_.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYjI5ZTFhYzMwMGY5OWRlNCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ5OTU4N30.wENzvM6j-QA_21bu9whi7leCAdz4Wu9UXM6Y8cAi24Q",
+      "subtitle_chunks": [
+        "할로윈 밤,",
+        "폰 바꾸러 갔다."
+      ]
     },
     {
       "at": 11.2,
       "duration": 3.04,
       "subtitle": "직원보다 무서운 건…\n견적서였다.",
       "task_id": "b7ba0b32-0ef2-40fb-8cb6-bbee4f77826c",
-      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/b7ba0b32-0ef2-40fb-8cb6-bbee4f77826c/___EP01______N2__11s_.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNmUzMjIzZmE0NzNjNGJmNSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ4Mzc3MH0.mn84qMxkRNuDNsd1PBPnOn8wdqjRJIHcI74spt8ibo4"
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/b7ba0b32-0ef2-40fb-8cb6-bbee4f77826c/___EP01______N2__11s_.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNmUzMjIzZmE0NzNjNGJmNSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzQ4Mzc3MH0.mn84qMxkRNuDNsd1PBPnOn8wdqjRJIHcI74spt8ibo4",
+      "subtitle_chunks": [
+        "직원보다",
+        "무서운 건…",
+        "견적서였다."
+      ]
     },
     {
       "at": 15.2,

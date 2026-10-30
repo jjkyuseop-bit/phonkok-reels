@@ -58,7 +58,7 @@ def title_markup(text: str) -> str:
     return esc(text).replace("[[", "{\\c" + RED + "}").replace("]]", "{\\c&HFFFFFF&}")
 
 
-def build_ass(spec: dict, path: str) -> None:
+def build_ass(spec: dict, path: str, narr_files=None) -> None:
     font_black = spec.get("font_black", "Noto Sans CJK KR Black")
     font_regular = spec.get("font_regular", "Noto Sans CJK KR")
     main_end = spec["main_duration"]
@@ -87,19 +87,84 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     lines = [header]
     lines.append(f"Dialogue: 0,{ass_time(0)},{ass_time(main_end)},Title,,0,0,0,,{title_markup(spec['title'])}\n")
     dlg_starts = sorted(d["start"] for d in spec.get("dialogue_subtitles", []))
-    for seg in spec["narration"]:
-        if seg.get("subtitle"):
-            end = seg["at"] + seg["duration"] + 0.3
+    for i, seg in enumerate(spec["narration"]):
+        audio = narr_files[i] if narr_files else ""
+        for (st, end, text) in chunk_times(seg, audio):
             # 다음 대사 자막이 시작되기 전에 나레이션 자막은 반드시 사라져야 함
-            nxt = [t for t in dlg_starts if t > seg["at"]]
+            nxt = [t for t in dlg_starts if t > st]
             if nxt:
                 end = min(end, nxt[0] - 0.08)
-            lines.append(f"Dialogue: 1,{ass_time(seg['at'])},{ass_time(end)},Narr,,0,0,0,,{esc(seg['subtitle'])}\n")
+            if end <= st:
+                continue
+            lines.append(f"Dialogue: 1,{ass_time(st)},{ass_time(end)},Narr,,0,0,0,,{esc(text)}\n")
     for d in spec.get("dialogue_subtitles", []):
         text = d["text"] if d["text"].startswith("- ") else "- " + d["text"]
         lines.append(f"Dialogue: 2,{ass_time(d['start'])},{ass_time(d['end'])},Dlg,,0,0,0,,{esc(text)}\n")
     with open(path, "w", encoding="utf-8") as f:
         f.writelines(lines)
+
+
+def narration_words(audio_path: str):
+    """나레이션 mp3에서 단어 타임스탬프(파일 기준 초) 추출. faster-whisper 없으면 None."""
+    try:
+        from faster_whisper import WhisperModel
+    except Exception:
+        return None
+    global _WHISPER
+    try:
+        _WHISPER
+    except NameError:
+        _WHISPER = WhisperModel("medium", device="cpu", compute_type="int8")
+    segs, _ = _WHISPER.transcribe(audio_path, language="ko", word_timestamps=True)
+    words = []
+    for sg in segs:
+        for w in (sg.words or []):
+            words.append((w.word.strip(), w.start, w.end))
+    return words or None
+
+
+def chunk_times(seg: dict, audio_path: str):
+    """subtitle_chunks 를 실제 발화 시각에 맞춰 [(start,end,text)] 로 변환 (절대 시각)."""
+    chunks = seg.get("subtitle_chunks")
+    if not chunks:
+        if seg.get("subtitle"):
+            return [(seg["at"], seg["at"] + seg["duration"] + 0.3, seg["subtitle"])]
+        return []
+    at, dur = seg["at"], seg["duration"]
+    words = narration_words(audio_path)
+    out = []
+    if words:
+        # 공백 제거 문자열을 순서대로 소비하며 각 chunk 의 첫/마지막 단어를 찾음
+        wi = 0
+        buf = ""
+        for ch in chunks:
+            target = "".join(ch.split())
+            start = None
+            while wi < len(words) and len(buf) < len(target):
+                wtxt, ws, we = words[wi]
+                if start is None:
+                    start = ws
+                buf += "".join(wtxt.split())
+                end = we
+                wi += 1
+            if start is None:
+                break
+            out.append([at + start, at + end, ch])
+            buf = ""
+        if len(out) == len(chunks):
+            for i in range(len(out)):
+                nxt = out[i + 1][0] if i + 1 < len(out) else at + dur + 0.3
+                out[i][1] = min(out[i][1] + 0.25, nxt - 0.02)
+            return [tuple(o) for o in out]
+    # fallback: 글자 수 비례
+    total = sum(len("".join(c.split())) for c in chunks) or 1
+    t = at
+    res = []
+    for c in chunks:
+        d = dur * len("".join(c.split())) / total
+        res.append((t, t + d, c))
+        t += d
+    return res
 
 
 def ff_path(p: str) -> str:
@@ -166,7 +231,7 @@ def main() -> None:
         raise SystemExit(f"엔드카드 파일이 없습니다: {endcard}")
 
     ass = os.path.join(ep_dir, "subs.ass")
-    build_ass(spec, ass)
+    build_ass(spec, ass, narr_files)
 
     mix = spec["mix"]
     fps = spec.get("fps", 30)
