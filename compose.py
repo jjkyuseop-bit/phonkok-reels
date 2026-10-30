@@ -210,17 +210,23 @@ def apply_cuts(spec: dict, video: str, ep_dir: str) -> str:
     segs = spec.get("keep_segments")
     if not segs:
         return video
-    segs = sorted((float(a), float(b)) for a, b in segs)
+    # 순서 그대로 적용(정렬하지 않음) → 뒤쪽 구간을 앞으로 끌어오거나, 재생성 클립(원본 뒤에 stitch된 구간)을 중간에 끼울 수 있음
+    segs = [(float(a), float(b)) for a, b in segs]
+    starts = []
+    acc = 0.0
+    for a, b in segs:
+        starts.append(acc)
+        acc += b - a
 
     def remap(t: float):
-        acc = 0.0
-        for a, b in segs:
-            if t < a:
-                return acc  # 잘린 구간 → 다음 유지 구간 시작
-            if t <= b:
-                return acc + (t - a)
-            acc += b - a
-        return acc  # 끝 이후 → 새 길이
+        for (a, b), o in zip(segs, starts):
+            if a <= t <= b:
+                return o + (t - a)
+        # 잘린 구간 → 원본 시간상 바로 다음에 오는 유지 구간의 출력 시작으로
+        later = [(a, o) for (a, b), o in zip(segs, starts) if a > t]
+        if later:
+            return min(later)[1]
+        return acc
 
     def inside(t: float) -> bool:
         return any(a <= t <= b for a, b in segs)
@@ -239,7 +245,7 @@ def apply_cuts(spec: dict, video: str, ep_dir: str) -> str:
     kept = []
     for d in spec.get("dialogue_subtitles", []):
         if inside(d["start"]) or inside(d["end"]):
-            kept.append({**d, "start": remap(max(d["start"], segs[0][0])), "end": remap(d["end"])})
+            kept.append({**d, "start": remap(d["start"]), "end": remap(d["end"])})
     spec["dialogue_subtitles"] = [d for d in kept if d["end"] - d["start"] > 0.2]
     for seg in spec["narration"]:
         if seg["at"] < spec["main_duration"]:
