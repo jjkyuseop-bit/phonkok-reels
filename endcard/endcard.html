@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; }
+  body {
+    font-family: "Noto Sans CJK KR", "Noto Sans KR", sans-serif;
+    background: radial-gradient(1200px 800px at 30% 40%, #2a1216 0%, #140a0c 60%, #0b0607 100%);
+    color: #fff;
+    position: relative;
+  }
+  .glow {
+    position: absolute; width: 900px; height: 900px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,72,85,.38) 0%, rgba(232,72,85,0) 70%);
+    right: -150px; top: -200px; filter: blur(20px);
+  }
+  .left {
+    position: absolute; left: 140px; top: 0; height: 1080px; width: 980px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .wordmark { display: flex; align-items: center; gap: 28px; margin-bottom: 44px; }
+  .mark {
+    width: 128px; height: 128px; border-radius: 34px;
+    background: linear-gradient(135deg, #F06A75 0%, #E84855 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 84px; color: #fff; letter-spacing: -2px;
+    box-shadow: 0 20px 60px rgba(232,72,85,.45);
+  }
+  .brand { font-size: 112px; font-weight: 900; letter-spacing: -4px; line-height: 1; }
+  .brand small { display: block; font-size: 30px; font-weight: 500; letter-spacing: 6px; color: #F7A3AA; margin-top: 10px; }
+  .tag { font-size: 64px; font-weight: 800; line-height: 1.25; letter-spacing: -1.5px; margin-bottom: 40px; }
+  .tag em { font-style: normal; color: #E84855; }
+  .steps { display: flex; flex-direction: column; gap: 18px; margin-bottom: 48px; }
+  .step { display: flex; align-items: center; gap: 20px; font-size: 38px; font-weight: 600; color: #e5e7eb; }
+  .step b {
+    width: 56px; height: 56px; border-radius: 50%; background: #4a1a20; color: #F7A3AA;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 800;
+    border: 2px solid #E84855;
+  }
+  .store { display: flex; align-items: center; gap: 22px; font-size: 34px; font-weight: 600; color: #cbd5e1; }
+  .pill {
+    padding: 14px 30px; border-radius: 999px; background: #E84855; color: #fff; font-weight: 800; font-size: 34px;
+  }
+  /* phone mockup */
+  .phone {
+    position: absolute; right: 200px; top: 120px; width: 420px; height: 860px;
+    border-radius: 56px; background: #0f172a; border: 10px solid #1f2937;
+    box-shadow: 0 40px 120px rgba(0,0,0,.6), 0 0 0 2px #3a2a2c;
+    overflow: hidden; transform: rotate(-4deg);
+  }
+  .notch { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); width: 140px; height: 30px; background: #000; border-radius: 20px; }
+  .screen { position: absolute; inset: 0; background: #f8fafc; padding: 70px 22px 22px; color: #0f172a; }
+  .screen h3 { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
+  .screen p { font-size: 17px; color: #64748b; margin-bottom: 18px; }
+  .quote {
+    background: #fff; border-radius: 18px; padding: 16px 18px; margin-bottom: 12px;
+    border: 1.5px solid #e2e8f0; box-shadow: 0 4px 14px rgba(15,23,42,.06);
+  }
+  .quote.best { border-color: #E84855; box-shadow: 0 8px 24px rgba(232,72,85,.25); }
+  .q1 { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .q1 span { font-size: 17px; font-weight: 700; }
+  .q1 i { font-style: normal; font-size: 13px; padding: 4px 9px; border-radius: 999px; background: #FDE3E5; color: #C92F3C; font-weight: 700; }
+  .q2 { display: flex; justify-content: space-between; font-size: 14px; color: #475569; }
+  .q2 b { font-size: 22px; color: #0f172a; }
+  .cta { margin-top: 10px; background: #E84855; color: #fff; border-radius: 14px; text-align: center; padding: 14px; font-weight: 800; font-size: 18px; }
+  .note { position: absolute; left: 140px; bottom: 36px; font-size: 20px; color: #64748b; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="left">
+    <div class="wordmark">
+      <div class="mark">P</div>
+      <div class="brand">폰콕<small>PHONKOK</small></div>
+    </div>
+    <div class="tag">핸드폰 바꿀 땐<br>발품 말고 <em>폰콕</em></div>
+    <div class="steps">
+      <div class="step"><b>1</b> 원하는 기종·조건으로 무료 견적 요청</div>
+      <div class="step"><b>2</b> 여러 판매점 견적을 한곳에서 비교</div>
+      <div class="step"><b>3</b> 궁금한 건 1:1 채팅으로 바로 상담</div>
+    </div>
+    <div class="store">앱스토어 · 플레이스토어에서 <span class="pill">폰콕 검색</span></div>
+  </div>
+
+  <div class="phone">
+    <div class="screen">
+      <h3>받은 견적 3건</h3>
+      <p>갤럭시 S26 · 기기변경 · 5G 요금제</p>
+      <div class="quote best">
+        <div class="q1"><span>강남 A매장</span><i>최저 할부원금</i></div>
+        <div class="q2"><span>할부원금</span><b>52만 원</b></div>
+      </div>
+      <div class="quote">
+        <div class="q1"><span>홍대 B매장</span></div>
+        <div class="q2"><span>할부원금</span><b>68만 원</b></div>
+      </div>
+      <div class="quote">
+        <div class="q1"><span>잠실 C매장</span></div>
+        <div class="q2"><span>할부원금</span><b>74만 원</b></div>
+      </div>
+      <div class="cta">1:1 채팅 상담</div>
+    </div>
+    <div class="notch"></div>
+  </div>
+  <div class="note">※ 화면은 비교 기능을 설명하기 위한 연출 이미지입니다</div>
+</body>
+</html>

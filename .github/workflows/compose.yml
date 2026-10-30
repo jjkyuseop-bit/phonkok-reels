@@ -1,0 +1,56 @@
+name: compose-reel
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "에피소드 폴더명 (예: ep01_halloween)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: compose-${{ inputs.episode }}
+  cancel-in-progress: false
+
+jobs:
+  compose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install ffmpeg and Korean fonts
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-noto-cjk fonts-noto-cjk-extra fontconfig
+          fc-cache -f
+          fc-list | grep -i "Noto Sans CJK KR" | head -3
+          ffmpeg -version | head -1
+
+      - name: Compose
+        run: |
+          python3 compose.py "${{ inputs.episode }}"
+          ls -la "${{ inputs.episode }}"
+
+      - name: Extract preview frames
+        run: |
+          EP="${{ inputs.episode }}"
+          OUT=$(python3 -c "import json;print(json.load(open('$EP/spec.json'))['output'])")
+          ffmpeg -y -loglevel error -ss 4 -i "$EP/$OUT" -frames:v 1 "$EP/preview_a.jpg"
+          ffmpeg -y -loglevel error -ss 9 -i "$EP/$OUT" -frames:v 1 "$EP/preview_b.jpg"
+          ffmpeg -y -loglevel error -ss 17 -i "$EP/$OUT" -frames:v 1 "$EP/preview_c.jpg"
+          echo "OUT=$OUT" >> "$GITHUB_ENV"
+
+      - name: Publish as release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          EP="${{ inputs.episode }}"
+          TAG="$EP"
+          gh release delete "$TAG" --yes --cleanup-tag 2>/dev/null || true
+          gh release create "$TAG" --title "$EP" --notes "자동 합성 결과물" \
+            "$EP/$OUT" "$EP/preview_a.jpg" "$EP/preview_b.jpg" "$EP/preview_c.jpg"
+          echo "공개 URL: https://github.com/${{ github.repository }}/releases/download/$TAG/$OUT"
