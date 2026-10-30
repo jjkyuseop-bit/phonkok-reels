@@ -331,9 +331,14 @@ def main() -> None:
         f"pad={W}:{H}:(ow-iw)/2:{VY}:black,setsar=1,format=yuv420p,fps={fps},setpts=PTS-STARTPTS[v1]"
     )
     fc.append("[v0][v1]concat=n=2:v=1:a=0[v]")
+    dubs = spec.get("dubs", [])
+    mute_expr = ""
+    if dubs:
+        conds_m = "+".join(f"between(t,{d['start']-0.05},{d['end']+0.05})" for d in dubs)
+        mute_expr = f"volume='if(gt({conds_m},0),0.08,1)':eval=frame,"
     fc.append(
         f"[0:a]atrim=0:{main_d},asetpts=PTS-STARTPTS,loudnorm=I=-15:TP=-1.5:LRA=9,aresample=48000,aformat=channel_layouts=stereo,volume={mix['video_audio']},"
-        f"volume={duck_expr}:eval=frame,apad=whole_dur={total}[a0]"
+        f"{mute_expr}volume={duck_expr}:eval=frame,apad=whole_dur={total}[a0]"
     )
     fc.append(
         f"[2:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{total},asetpts=PTS-STARTPTS,"
@@ -346,6 +351,11 @@ def main() -> None:
         ms = int(seg["at"] * 1000)
         fc.append(f"[{4+i}:a]loudnorm=I=-14:TP=-1.5:LRA=7,aresample=48000,aformat=channel_layouts=stereo,volume={mix['narration']},adelay={ms}|{ms}[n{i}]")
         labels.append(f"[n{i}]")
+    for j, d in enumerate(dubs):
+        ms = int(d["start"] * 1000)
+        idx = 4 + len(narr_files) + j
+        fc.append(f"[{idx}:a]loudnorm=I=-15:TP=-1.5:LRA=7,aresample=48000,aformat=channel_layouts=stereo,adelay={ms}|{ms}[d{j}]")
+        labels.append(f"[d{j}]")
     fc.append(
         "".join(labels) + f"amix=inputs={len(labels)}:duration=longest:normalize=0,"
         f"alimiter=limit=0.95,atrim=0:{total}[a]"
@@ -353,6 +363,10 @@ def main() -> None:
     cmd = ["ffmpeg", "-y", "-i", video, "-i", endcard, "-i", bgm, "-i", sfx]
     for p in narr_files:
         cmd += ["-i", p]
+    for j, d in enumerate(dubs):
+        dp = os.path.join(ep_dir, f"src_dub_{j}.mp3")
+        download(d["url"], dp)
+        cmd += ["-i", dp]
     cmd += [
         "-filter_complex", ";".join(fc),
         "-map", "[v]", "-map", "[a]",
