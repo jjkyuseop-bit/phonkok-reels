@@ -42,6 +42,36 @@ def download(url: str, dest: str) -> None:
         shutil.copyfileobj(r, f)
 
 
+def build_from_clips(clips: list, dest: str, ep_dir: str, fps: int) -> None:
+    """나레이션 중심 포맷: 여러 클립 [{url, task_id, in?, out?}] 을 순서대로 이어 하나의 본편(src_video.mp4)으로.
+    각 클립은 1280x720/fps/48kHz 스테레오로 정규화한 뒤 concat. in/out(초)으로 클립 안에서 쓸 구간을 고를 수 있다."""
+    if os.path.exists(dest) and os.path.getsize(dest) > 0:
+        return
+    parts = []
+    for i, c in enumerate(clips):
+        raw = os.path.join(ep_dir, f"src_clip_{i}.mp4")
+        download(c["url"], raw)
+        norm = os.path.join(ep_dir, f"src_clip_{i}_n.mp4")
+        tr = []
+        if c.get("in") is not None:
+            tr += ["-ss", str(c["in"])]
+        if c.get("out") is not None:
+            tr += ["-to", str(c["out"])]
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *tr, "-i", raw,
+                        "-vf", f"scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2,setsar=1,fps={fps},format=yuv420p",
+                        "-af", "aresample=48000,aformat=sample_fmts=fltp:channel_layouts=stereo",
+                        "-c:v", "libx264", "-preset", "fast", "-crf", "16", "-c:a", "aac", "-b:a", "192k", norm], check=True)
+        parts.append(norm)
+    lst = os.path.join(ep_dir, "clips.txt")
+    with open(lst, "w", encoding="utf-8") as f:
+        for p in parts:
+            f.write(f"file '{p}'\n")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", dest], check=True)
+    dur = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", dest],
+                         capture_output=True, text=True).stdout.strip()
+    print(f"클립 {len(parts)}개 결합 → {os.path.basename(dest)} ({dur}s)")
+
+
 def ass_time(t: float) -> str:
     h = int(t // 3600)
     m = int((t % 3600) // 60)
@@ -279,7 +309,10 @@ def main() -> None:
 
     a = spec["assets"]
     video = os.path.join(ep_dir, "src_video.mp4")
-    download(a["video"]["url"], video)
+    if a["video"].get("clips"):
+        build_from_clips(a["video"]["clips"], video, ep_dir, spec.get("fps", 30))
+    else:
+        download(a["video"]["url"], video)
 
     if analyze_only:
         analyze_speech(video, os.path.join(ep_dir, "speech_segments.txt"))

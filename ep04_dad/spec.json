@@ -1,0 +1,107 @@
+{
+  "episode": "ep04_dad",
+  "output": "phonkok_ep04_dad.mp4",
+  "fps": 30,
+  "font_black": "Noto Sans CJK KR Black",
+  "font_regular": "Noto Sans CJK KR",
+  "title": "아빠가 밤마다\n[[몰래]] 나가는 이유",
+  "main_duration": 20.0,
+  "endcard": {
+    "file": "../endcard/endcard.mp4",
+    "duration": 6.0
+  },
+  "assets": {
+    "video": {
+      "clips": [
+        {
+          "task_id": "c92ede4e-bf4d-44ca-bd80-3578acb5b153",
+          "url": ""
+        },
+        {
+          "task_id": "b127e942-0f1f-4ab5-96cc-af18cf1fdc3b",
+          "url": ""
+        },
+        {
+          "task_id": "951b5175-3b59-4291-9911-7c4cb1747249",
+          "url": ""
+        },
+        {
+          "task_id": "140fda37-251b-4690-b482-a196aadca402",
+          "url": ""
+        }
+      ]
+    },
+    "bgm": {
+      "task_id": "b089e4b0-4d43-472b-8159-f1432debb282",
+      "url": "https://dnznrvs05pmza.cloudfront.net/lyria3-clip/b089e4b0-4d43-472b-8159-f1432debb282/___EP04_BGM.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZmE5YmQ3OGNkNWY5NGJhZCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzYxMTY2MH0.UaNTHiNb5wtQxp-bwJyX4ZMaZOQxDfcoDd_MHRb_odM"
+    },
+    "sfx": {
+      "task_id": "eedf51d6-7c1d-4259-9d16-96c457c1a693",
+      "url": "https://dnznrvs05pmza.cloudfront.net/audio_sfx/d1a6acee-60d3-4629-a66e-377cd20261e2/___EP04____SFX.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOTNkMTNiZDNjYjRiMTgyYyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzY4Nzg5MX0.Kpp5UcZ0_D2Pfn5omYZQ7vZ_8GcbEbWR-LdT1k3p_Ds",
+      "at": 10.0
+    }
+  },
+  "narration": [
+    {
+      "at": 0.6,
+      "duration": 3.36,
+      "subtitle_chunks": [
+        "우리 아빠는,",
+        "밤마다",
+        "사라진다."
+      ],
+      "task_id": "2d2dea0d-51f5-4eb8-807c-b559b3a39351",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/2d2dea0d-51f5-4eb8-807c-b559b3a39351/___EP04_N1.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNjU1OTY0NDE0OWFjNzExZiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzY2OTE4NX0.CZHBaILaHrT1Vs0eZeDoc4S-aiKvDlIgijUBlQbSiw4"
+    },
+    {
+      "at": 5.8,
+      "duration": 3.12,
+      "subtitle_chunks": [
+        "엄마는",
+        "바람이라 했고,",
+        "나는 따라갔다."
+      ],
+      "task_id": "e886b6dd-eb96-47b2-a32f-68031b4b3195",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/e886b6dd-eb96-47b2-a32f-68031b4b3195/___EP04_N2.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZDhlMWZhZjE0M2Q5NjE0MiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzYxNjQ5N30.8Hmc-dITrYe6-ifj4V9fSFb5vGN6egm8t5PRVDyZN4Q"
+    },
+    {
+      "at": 11.2,
+      "duration": 3.04,
+      "subtitle_chunks": [
+        "일곱 번째…",
+        "핸드폰",
+        "매장이었다."
+      ],
+      "task_id": "436febd8-695c-40ef-a445-ee6baaffc265",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/436febd8-695c-40ef-a445-ee6baaffc265/___EP04_N3.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiM2YzNzkyMGNkOTQ2YmY3ZiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzYyNDA3Nn0._yTfJimw4buIUM5UAOmJwGU_aTICdQ75eG8Gq8LYXr8"
+    },
+    {
+      "at": 15.9,
+      "duration": 3.44,
+      "subtitle_chunks": [
+        "아빠.",
+        "그거…",
+        "집에서",
+        "한 번에 돼."
+      ],
+      "task_id": "c72c7842-01a4-4da1-8b71-301fcba3e4be",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/c72c7842-01a4-4da1-8b71-301fcba3e4be/___EP04_N4.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMmFkZDdlZTdmYTNhZjJkMiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzYyOTQxNX0.bOVTqpDSKL7NsmumGZd_zs8x4ySxUi9LxYizVoPUPlo"
+    },
+    {
+      "at": 20.6,
+      "duration": 3.28,
+      "subtitle": "",
+      "task_id": "a1dc056e-b8bb-43c8-8c73-a6906324298b",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/a1dc056e-b8bb-43c8-8c73-a6906324298b/___EP04_____.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMGJkNDNhM2Q2MmUxMmIzYiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzY2MTExN30.1T1fltRkIlVr-NB8lq_sUG-f6zxmvqbCIatyocGJZTg"
+    }
+  ],
+  "dialogue_subtitles": [],
+  "mix": {
+    "video_audio": 0.6,
+    "narration": 1.4,
+    "bgm_main": 0.14,
+    "bgm_end": 0.35,
+    "sfx": 0.8,
+    "duck": 0.5
+  }
+}
