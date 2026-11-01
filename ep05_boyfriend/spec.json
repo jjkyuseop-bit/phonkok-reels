@@ -1,0 +1,104 @@
+{
+  "episode": "ep05_boyfriend",
+  "output": "phonkok_ep05_boyfriend.mp4",
+  "fps": 30,
+  "font_black": "Noto Sans CJK KR Black",
+  "font_regular": "Noto Sans CJK KR",
+  "title": "남자친구가 갑자기\n[[조용해진]] 이유",
+  "main_duration": 20.0,
+  "endcard": {
+    "file": "../endcard/endcard.mp4",
+    "duration": 6.0
+  },
+  "assets": {
+    "video": {
+      "clips": [
+        {
+          "task_id": "c1c9df74-90ba-4177-a5ce-d270fef9373d",
+          "url": ""
+        },
+        {
+          "task_id": "511cdb88-fa70-4eff-9ccc-d30f62d05aa0",
+          "url": ""
+        },
+        {
+          "task_id": "2b8dcb58-dfb1-4498-bf33-068fea785507",
+          "url": ""
+        },
+        {
+          "task_id": "e7eed523-48c8-43b9-9bcb-7b84f7421d60",
+          "url": ""
+        }
+      ]
+    },
+    "bgm": {
+      "task_id": "ada3b077-39cb-41d3-8383-6b3d922d8fa8",
+      "url": "https://dnznrvs05pmza.cloudfront.net/lyria3-clip/ada3b077-39cb-41d3-8383-6b3d922d8fa8/___EP05_BGM.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZGFhOTAzOGQxMmM5YjEwZSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzYyOTU4MX0.rAoOWBIizhfPIBmvOI2oAQRl0jXdh1Q6rKhEVJbemgs"
+    },
+    "sfx": {
+      "task_id": "abf388f7-ff15-461d-8747-d86556da42b8",
+      "url": "https://dnznrvs05pmza.cloudfront.net/audio_sfx/4a39e176-62c5-4d97-adb2-4f1d4b3eaf30/___EP05____SFX.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiODIzOWY4YmQxM2M0MDJjYyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzYxODEwOX0.59vppydqroEVwP-UK5Cfi4rrzp1FxfpnMzTiHIb51O8",
+      "at": 10.0
+    }
+  },
+  "narration": [
+    {
+      "at": 0.6,
+      "duration": 3.84,
+      "subtitle_chunks": [
+        "남자친구가,",
+        "갑자기",
+        "조용해졌다."
+      ],
+      "task_id": "246006cb-8b2f-49f7-889f-9fd0580a36cd",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/246006cb-8b2f-49f7-889f-9fd0580a36cd/___EP05_N1.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOTk0YzQyZTZhZTY3MjgxYyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzYyMDcxMH0.BUzNdXwdHIemJdIf-2gYtHCO84KusvppVtRXYmadjV0"
+    },
+    {
+      "at": 6.0,
+      "duration": 2.48,
+      "subtitle_chunks": [
+        "친구들은,",
+        "끝났다고 했다."
+      ],
+      "task_id": "278ebd52-c7f6-4fb5-b73e-5daf3d508717",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/278ebd52-c7f6-4fb5-b73e-5daf3d508717/___EP05_N2.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZDRmMDM2YjI2YzNiOGE5NyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzYyMjgzNH0.tbDUcmIFmmQTSPGAC5GQ_l77njTl-qXF_vz6F68ag3E"
+    },
+    {
+      "at": 11.2,
+      "duration": 3.28,
+      "subtitle_chunks": [
+        "핸드폰 바꾸려고…",
+        "열흘째였다."
+      ],
+      "task_id": "9c2ca218-1329-4f5a-91c2-a74adf123eb5",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/9c2ca218-1329-4f5a-91c2-a74adf123eb5/___EP05_N3.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMmRjYjRmNTAyNTQ3N2M1NiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzYwNzYzMn0.tYn1ZMHK0oC-1Cx6fqR0HYm9piFgpRiuCv_v5I46omA"
+    },
+    {
+      "at": 16.0,
+      "duration": 3.04,
+      "subtitle_chunks": [
+        "자기야.",
+        "그거…",
+        "한 번에 돼."
+      ],
+      "task_id": "dc638972-9ac1-430b-99c2-6f2ae4bfea01",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/dc638972-9ac1-430b-99c2-6f2ae4bfea01/___EP05_N4.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOGIzM2Q0YTU1ZjViNjNlZSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzYxNTM5N30.3RkRkhhal4xdrnsTgpZUowoc_xgCsC0pqQIWh62Dirw"
+    },
+    {
+      "at": 20.4,
+      "duration": 4.24,
+      "subtitle": "",
+      "task_id": "ae4be7c6-3f27-473c-9c63-420c2db3d0d0",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/ae4be7c6-3f27-473c-9c63-420c2db3d0d0/___EP05_____.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiODQ4MTM1MjYzZDJhMTRlZSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MzY1MjI2Mn0.mtbLRbX7YiP_Xn4u-uZ_fuqoqQDfgIUXUX-V1_oiQEs"
+    }
+  ],
+  "dialogue_subtitles": [],
+  "mix": {
+    "video_audio": 0.6,
+    "narration": 1.4,
+    "bgm_main": 0.14,
+    "bgm_end": 0.35,
+    "sfx": 0.8,
+    "duck": 0.5
+  }
+}
