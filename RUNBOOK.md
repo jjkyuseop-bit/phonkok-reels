@@ -1,4 +1,4 @@
-# 폰콕 릴스 주간 자동 제작 런북 (매주 화요일 실행)
+# 폰콕 릴스 자동 제작 런북 (매주 화·금 실행)
 
 이 문서는 예약 작업이 새 세션에서 그대로 따라 하는 절차다. **FORMAT.md 의 규칙은 전부 강제**이며, 사람 확인 없이 끝까지 진행하고 게시한다.
 
@@ -8,7 +8,8 @@
 3. Metricool `getBrandSettings` 로 brand 7556654(phon.kok) 확인.
 4. `FORMAT.md` 와 `ep*/script.md` 전부 읽기 (소재 중복 방지).
 
-## 0.5 오늘 이미 예약된 영상이 있으면 생성하지 않는다
+## 0.5 오늘 이미 예약된 영상이 있으면 생성하지 않는다 / 예산 가드
+- Runway `whoami` 잔여 크레딧 < 550 이면 생성하지 않고 알림만 하고 종료.
 - Metricool `getScheduledPosts`(오늘 00:00~23:59 Asia/Seoul)에 검수 완료된 릴스/숏츠가 이미 잡혀 있으면(예: 대표가 미리 검수한 편), **새 영상을 만들지 않는다.** 1단계 성과 기록과 알림만 하고 종료.
 
 ## 1. 지난 편 성과 확인
@@ -16,31 +17,25 @@
 - 결과를 `reports/YYYY-MM-DD.md` 에 기록하고, 다음 편에 반영할 한 줄 교훈을 적는다 (예: 3초 이탈 높음 → 훅 더 세게).
 - 데이터가 아직 없으면 "데이터 없음"으로 기록하고 진행.
 
-## 2. 기획
-- 제목: FORMAT.md "제목(훅) 원칙" 준수 — 핸드폰·폰콕과 무관해 보이는 보편적 어그로. 포인트 단어 1개를 `[[ ]]`로 표시.
-- 구조: 기(0~4s 훅) / 승(4~11s 코믹 전개) / 전(11~18s 반전) / 결(18~23s 폰콕으로 해소) + 엔드카드 6s.
-- 시즌·시사 소재 우선. 기존 에피소드와 소재 중복 금지.
-- 대사는 짧고 명확하게 3~5줄. 나레이션은 어절 단위 조각으로 설계하고 **대사와 겹치지 않는 구간**에만 배치할 계획을 세운다.
-- 새 폴더 `epNN_<slug>/` 에 `script.md` 작성.
+## 2. 기획 (나레이션 중심 포맷)
+- 후보 소재 3개를 먼저 적고 세 기준으로 1개 선택: ① 제목만 보고 멈추는가(핸드폰 무관 보편 어그로) ② 15초까지 폰 냄새가 없는가 ③ 마지막 한 줄로 뒤집히는가
+- 제목: FORMAT.md "제목(훅) 원칙". 포인트 단어 `[[ ]]`
+- 나레이션 4줄(기·승·전·결) + 엔드카드 1줄. FORMAT.md "나레이션 작법"
+- 클립 4개 샷리스트: 각 5초, 장면·인물·동작·카메라. 대사 없음
+- 시즌·시사 소재 우선. `ep*/script.md` 와 소재 중복 금지
+- 새 폴더 `epNN_<slug>/` 에 `script.md` 작성
 
-## 3. 생성 (Runway MCP) — 단일 생성, 최대 20초
-- 영상: `generate_video` model=seedance-2.5, ratio=16:9, resolution=720p, generateAudio=true, **duration ≤ 20 (단일 1회)**. 프롬프트는 4막을 시간대별로 서술하고 대사는 FORMAT.md '대사 작법'대로 짧게. 인물·핵심 동작은 프레임 중앙. 침묵 구간(첫 2초, 반전 직전 1.5초) 명시. 끝에 "No on-screen text, no captions, no logos. No music."
-- (선택) 외모 고정이 필요하면 `generate_image`로 캐릭터 시트를 만들어 referenceImages 로 전달. **referenceAudio 는 절대 사용하지 않는다. 샷을 나눠 만들지 않는다.**
-- 생성 결과는 반드시 analyze-speech(Whisper A/B + contact sheet)로 확인한 뒤 제목·나레이션·캡션 확정.
-- 나레이션: `search_voices`(ko)로 톤에 맞는 네이티브 보이스 선택, `generate_speech` eleven_v4, 문장 단위 조각. 본편엔 대사 없는 구간에만, 마무리 문장은 엔드카드 나레이션에.
-- BGM `generate_music` lyria-3-clip 30s / 효과음 `generate_sound_effect` 2~3s.
-- 크레딧: 20초 720p ≈ 600 + 오디오 ≈ 30 → 편당 ≈ 650.
-- **TTS 를 인물 입에 붙이는 수리(dubs) 금지.** 핵심 대사가 뭉개지면 대사를 더 줄여 전체 재생성 1회, 그래도 안 되면 나레이션 모드.
+## 3. 생성 (Runway MCP)
+1. 인물 레퍼런스: `generate_image`(nano-banana-pro, 16:9) 인물별 1장 (전신+얼굴 시트)
+2. 나레이션: `search_voices`(language=ko)로 톤에 맞는 보이스 선택 → 줄마다 `generate_speech`(eleven_v4, languageCode=ko). 엔드카드 나레이션도 같은 목소리
+3. BGM `generate_music`(lyria-3-clip) / 효과음 `generate_sound_effect`(2~3초, 반전 지점)
+4. 클립 4개: `generate_video`(seedance-2.5, 16:9, 720p, duration=5, generateAudio=true, referenceImages=[인물 시트 taskId+tag]). 프롬프트 끝에 "No dialogue, no speech, no readable on-screen text, no captions, no logos, no music."
+5. `get_task` 로 4개 모두 프레임 확인. 어색한 클립만 재생성(최대 2회). 금지: referenceAudio, 더빙, 단일 20초 대사형
 
-## 4. 분석 → 스펙 작성
-- `spec.json` 을 이전 에피소드 형식으로 작성 (assets.video.url 만 먼저 채워도 됨) → 커밋/푸시 → `analyze-speech` 워크플로 dispatch(episode=epNN_slug) → 완료 후 Release `analyze-epNN_slug` 의 `transcript.json`, `speech_segments.txt`, `contact_sheet.jpg` 를 `gh api -H "Accept: application/octet-stream" repos/.../releases/assets/<id>` 로 받는다.
-- transcript 의 A/B 두 결과가 일치하는 단어만으로 `dialogue_subtitles` 를 쓴다(**대본 문구 금지, 미인식 구간은 자막 없음**). 시각은 단어 타임스탬프, 대사 사이 빈 구간에 나레이션 `at` 을 배치한다. 나레이션 `duration` 은 get_task 의 durationSeconds.
-- `subtitle_chunks` 로 나레이션 자막을 어절 단위로 쪼갠다.
-- 효과음 `at` 은 반전 발화 시작 시각.
-
-## 4.5 판정 — 영상이 잘못 나왔으면 여기서 분기
-- transcript A/B 에서 핵심 대사(훅·반전·펀치라인)가 미인식·불일치면 FORMAT.md "영상이 잘못 나왔을 때" 절차대로: ①자막 비우기(부수 대사만) → ②대사를 더 줄여 전체 재생성 1회 → ③나레이션 모드 폴백. 예산 가드 준수. 어떤 경로를 택했는지 reports/ 에 기록.
-- **금지**: 부분 재생성 + `stitch_videos` 이어붙이기, 후시녹음·더빙(dubs), referenceAudio. 모두 실험 후 폐기됨(FORMAT.md 생성 방식 절). 2단계 내용 원칙(앞 75%는 폰 언급 없는 순수 코미디)도 여기서 contact_sheet 로 한 번 더 확인.
+## 4. 스펙 작성
+- `spec.json`: `assets.video.clips = [{task_id, url}, ...]` (순서대로, 필요하면 `in`/`out`으로 클립 안 구간 지정), `narration[].at` = 클립 시작 + 0.6, `duration` = get_task durationSeconds, `subtitle_chunks` 어절 단위, `dialogue_subtitles: []`, `mix.video_audio 0.6`, sfx.at = 3번째 클립 시작
+- 예: `ep04_dad/spec.json`
+- analyze-speech 는 이 포맷에서 불필요(대사 없음). 클립에 말소리가 섞인 의심이 있으면 돌려서 확인
 
 ## 5. 합성
 - 커밋/푸시 후 `compose` 워크플로 dispatch → 완료되면 Release `epNN_slug` 의 mp4·preview 를 받아 **프레임을 직접 보고** 제목/자막 위치·겹침·오타를 점검. 문제가 있으면 spec 수정 후 재실행.
@@ -55,7 +50,7 @@ compose 워크플로는 Release 에 `qa/report.txt`, `qa/grid.jpg`(0.5초 간격
 
 ## 6. 게시 (Metricool, 확인 없이)
 - `createScheduledPost` 두 번: instagram(REEL, isAiGenerated=true, showReelOnFeed=true, videoCoverMilliseconds=훅 장면) / youtube(short, public, category COMEDY, isAiGeneratedContent=true, 제목 "{훅} {이모지} | 폰콕 #Shorts").
-- 게시 시각: 실행일(화) 오전 10:00 Asia/Seoul. 실행이 10시를 넘겼으면 가장 가까운 10분 단위 이후 시각.
+- 게시 시각: 실행일(화 또는 금) 오전 10:00 Asia/Seoul. 실행이 10시를 넘겼으면 가장 가까운 10분 단위 이후 시각.
 - 캡션: FORMAT.md 포맷. 유튜브에는 #Shorts 추가.
 
 ## 7. 마무리
