@@ -65,3 +65,8 @@
 
 ## 크레딧
 - 시작 잔여: 896
+- 종료 잔여: 244 → 이번 편 **652 크레딧** (레퍼런스 2장 40 + 5초 클립 4개 600 + 나레이션 5줄 5 + BGM 4 + SFX 3). 4클립 모두 1회 통과, 재생성 0회
+- 나레이터: Esther (dJlwSfdSqMaQjm3NSl3B, 30대 여성·담담)
+- QA: compose report "문제 없음", grid/sub_boundaries 육안 확인 통과. analyze-speech 전체 통과 인식 A/B 결과 '히히히'(웃음소리)뿐 → 실제 대사 없음 (구간별 인식의 "시청해주셔서 감사합니다" 류는 무음·웃음 구간 Whisper 환청)
+- 공개 URL: https://github.com/jjkyuseop-bit/phonkok-reels/releases/download/ep06_husband/phonkok_ep06_husband.mp4
+- 예약: 2026-11-10 10:00 KST — IG REEL 422488166 / YT short 422488450
