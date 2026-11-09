@@ -1,0 +1,107 @@
+{
+  "episode": "ep06_husband",
+  "output": "phonkok_ep06_husband.mp4",
+  "fps": 30,
+  "font_black": "Noto Sans CJK KR Black",
+  "font_regular": "Noto Sans CJK KR",
+  "title": "남편이 갑자기\n[[다정해진]] 이유",
+  "main_duration": 20.0,
+  "endcard": {
+    "file": "../endcard/endcard.mp4",
+    "duration": 6.0
+  },
+  "assets": {
+    "video": {
+      "clips": [
+        {
+          "task_id": "86095e6c-bca5-44b5-9a11-7f5b8c3c0d50",
+          "url": "https://dnznrvs05pmza.cloudfront.net/seedance_2_5/cgt-20261110061903-9pz1t/Live_action_Korean_web_drama__photorealistic__natural_film_look__shallow_depth_of_field__practical_l.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMmY4NTMyYTU5YzM1NGZmZCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDQwMDgwNX0.mubxeEK5TlIOv4MM6P4Kw-bYkCfBL0t-klmVaL1Exmc"
+        },
+        {
+          "task_id": "4697a086-bc62-4021-96a8-18ece2f40a5e",
+          "url": "https://dnznrvs05pmza.cloudfront.net/seedance_2_5/cgt-20261110061906-2jfum/Live_action_Korean_web_drama__photorealistic__natural_film_look__shallow_depth_of_field__warm_practi.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZWE0MTlhN2ZjNmUxMDk1YSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDM1OTkzNX0.naNQ4nsDyymj3IPaNZjcvWjTmfHaUVZNloGQVSyoEws"
+        },
+        {
+          "task_id": "06476da2-7617-435f-b181-884c32677e0b",
+          "url": "https://dnznrvs05pmza.cloudfront.net/seedance_2_5/cgt-20261110061911-658pl/Live_action_Korean_web_drama__photorealistic__natural_film_look__shallow_depth_of_field__warm_practi.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNzZmZmJiYTZiNmIwNTI3NiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDM4MTYwNn0.4B8aLeopWzCmipAVwL6MDqV6tt-3q0nltmkO_zZckMk"
+        },
+        {
+          "task_id": "5bc0a2b1-761e-487e-8560-c06a6787a11d",
+          "url": "https://dnznrvs05pmza.cloudfront.net/seedance_2_5/cgt-20261110061916-92kmk/Live_action_Korean_web_drama__photorealistic__natural_film_look__shallow_depth_of_field__warm_practi.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZDRmZTQwNjEyOWI0NzFhNyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDM3MDAxN30.C9yK5_sq58cUXKPc2c1FJlvixhyoZVfdzb1yi4bPpRc"
+        }
+      ]
+    },
+    "bgm": {
+      "task_id": "c8424ae4-c31b-4a8b-abf4-ff458d873832",
+      "url": "https://dnznrvs05pmza.cloudfront.net/lyria3-clip/c8424ae4-c31b-4a8b-abf4-ff458d873832/___EP06_BGM.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZDU2ZjdhNGI1OTEzNTRkZCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDM2MDAxMX0.Nf_18jZA_MPu9bamfbvWM6eEChVBUIY_aZANrygaE0M"
+    },
+    "sfx": {
+      "task_id": "0a56d74f-251b-4acd-8371-0ce15fb488d1",
+      "url": "https://dnznrvs05pmza.cloudfront.net/audio_sfx/4800b4c9-2eef-4236-9078-932497d11dce/___EP06____SFX.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOTc0ZjM4OGE3NDBlNjJkNSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDM4ODIzNH0.fRX3bCzul-HMewIL1ijc4fILXIXuh19tsuHz4Cs3idU",
+      "at": 10.0
+    }
+  },
+  "narration": [
+    {
+      "at": 0.5,
+      "duration": 3.28,
+      "subtitle_chunks": [
+        "우리 남편이,",
+        "갑자기",
+        "다정해졌다."
+      ],
+      "task_id": "377fa9cb-848e-4d7b-8304-cbc01c155ca0",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/377fa9cb-848e-4d7b-8304-cbc01c155ca0/___EP06_N1.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNjQ0NmFhNDFkOTlmZmYzMiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDQxMzUwNX0.DM5j3MZv6pquM2-c1D4Z0yvdqbnL7j60BJWmJTxibqI"
+    },
+    {
+      "at": 5.6,
+      "duration": 3.92,
+      "subtitle_chunks": [
+        "설거지에,",
+        "안마까지…",
+        "불안했다."
+      ],
+      "task_id": "7c9f25ef-6be4-4b53-9ecb-18b99d150b5d",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/7c9f25ef-6be4-4b53-9ecb-18b99d150b5d/___EP06_N2.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNzkyYjc2N2QyODBhNDRmMSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDQyNzUxN30.OHOZFxEcWhaaJNOMeS68BFxFqkZk1kqWCM4Hu7hRN5w"
+    },
+    {
+      "at": 10.6,
+      "duration": 3.12,
+      "subtitle_chunks": [
+        "핸드폰을…",
+        "공짜로",
+        "바꿔 왔단다."
+      ],
+      "task_id": "9c6be433-9d3b-4b9b-a980-db8343e9bda9",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/9c6be433-9d3b-4b9b-a980-db8343e9bda9/___EP06_N3.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZjYxMDJlMTk3OWJiYjczOSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDQxODcxM30.SCbkj8tdxj7Pv7r_4iEUqfS07UD24iD0WvTVaNr0qTc"
+    },
+    {
+      "at": 15.6,
+      "duration": 3.76,
+      "subtitle_chunks": [
+        "여보.",
+        "세상에",
+        "공짜 폰은…",
+        "없어."
+      ],
+      "task_id": "d9b0a036-bdfd-471d-a700-1bfcb5173166",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/d9b0a036-bdfd-471d-a700-1bfcb5173166/___EP06_N4.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMDUwZTc3MTc0Y2I0OGY2ZCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDQzMDg3MX0.t0Wrl84155aCvAB9qi__2CKKzKbfZ2xxBspAUR5i9m4"
+    },
+    {
+      "at": 20.3,
+      "duration": 5.36,
+      "subtitle": "",
+      "task_id": "d3b0d457-679d-45be-a0bf-1c0ab532d3ca",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/d3b0d457-679d-45be-a0bf-1c0ab532d3ca/___EP06_____.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNmY2YjE3YzhlYjUxYTFhYyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDM4MDYxNn0.AVh9JVVQpqpRBk0THgQay7RZ0nyiQB26AIxniyTo-FA"
+    }
+  ],
+  "dialogue_subtitles": [],
+  "mix": {
+    "video_audio": 0.6,
+    "narration": 1.4,
+    "bgm_main": 0.14,
+    "bgm_end": 0.35,
+    "sfx": 0.8,
+    "duck": 0.5
+  }
+}
