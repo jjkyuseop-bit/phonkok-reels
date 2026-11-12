@@ -1,0 +1,108 @@
+{
+  "episode": "ep07_suneung",
+  "output": "phonkok_ep07_suneung.mp4",
+  "fps": 30,
+  "font_black": "Noto Sans CJK KR Black",
+  "font_regular": "Noto Sans CJK KR",
+  "title": "수능 D-6, 우리 집에\n[[낯선 남자들]]이 왔다",
+  "main_duration": 20.0,
+  "endcard": {
+    "file": "../endcard/endcard.mp4",
+    "duration": 6.0
+  },
+  "assets": {
+    "video": {
+      "clips": [
+        {
+          "task_id": "c5c451ec-bbce-4fb7-beea-90fa022a15e6",
+          "url": "https://dnznrvs05pmza.cloudfront.net/seedance_2_5/cgt-20261113061851-q2z9p/Live_action_Korean_web_drama__photorealistic__natural_film_look__shallow_DOF__practical_lighting__Mo.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZTk3YjlkOTJmZDAwZWI1MiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDY5MDE5NH0.f4juD_498boYWw0V1kdQBt-ZwtlCGMiYomAJbJf_Csc"
+        },
+        {
+          "task_id": "e2c1f7bd-67c9-4f48-beef-eca68df54045",
+          "url": "https://dnznrvs05pmza.cloudfront.net/seedance_2_5/cgt-20261113061859-5luyf/Live_action_Korean_web_drama__photorealistic__natural_film_look__shallow_DOF__practical_lighting__Ev.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMGZkNTc1NWJmN2VmNzY1ZiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDY2ODI1MX0.yrVKIGGXMOla2G5HZ_IG9qH401KyWmskDUjT9bNp_Gc"
+        },
+        {
+          "task_id": "42cdd66e-c368-4e06-9191-759d8bbd85e4",
+          "url": "https://dnznrvs05pmza.cloudfront.net/seedance_2_5/cgt-20261113061852-menzb/Live_action_Korean_web_drama__photorealistic__natural_film_look__shallow_DOF__practical_lighting__Sa.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNWM2ZWMzYmU4ZTBlYTZkOSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDY3MDE0Mn0.PLSteWRIUUKbBfINwzkQF4BnC-EyH495p_5NDrO90zI"
+        },
+        {
+          "task_id": "81a7150b-385f-4f82-acc8-48ea5d530983",
+          "url": "https://dnznrvs05pmza.cloudfront.net/seedance_2_5/cgt-20261113061855-j2ktd/Live_action_Korean_web_drama__photorealistic__natural_film_look__shallow_DOF__practical_lighting__Sa.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiM2JlNDYxZWM4YjBhODk4OSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDY5MTgyMH0.jw3Of1JdDvoMaI-wkrCvlDAbMOlZsDJqRhb9fWD0j1A"
+        }
+      ]
+    },
+    "bgm": {
+      "task_id": "e1eae67f-0ed5-4664-ae15-25bdddb2e575",
+      "url": "https://dnznrvs05pmza.cloudfront.net/lyria3-clip/e1eae67f-0ed5-4664-ae15-25bdddb2e575/___EP07_BGM.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNWMzNzRhY2VjNjlhZGNjOCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDY2MzUwMn0.ARHxST1IKFvpEDDu0yATlJ0ekv9w7RL2LW1FzND15rw"
+    },
+    "sfx": {
+      "task_id": "095123a6-243e-4699-aa28-67fd4fbe99e3",
+      "url": "https://dnznrvs05pmza.cloudfront.net/audio_sfx/01437958-f5dd-450a-b687-7b8857082d14/___EP07____SFX.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNTYzOTM2ZDYyNTA5Y2FmYyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDYwOTM2Nn0.TCA8eW7uCFRNmGqV7eKt2EYPdwpJLo8l-rYfvjiN-P8",
+      "at": 10.0
+    }
+  },
+  "narration": [
+    {
+      "at": 0.5,
+      "duration": 4.0,
+      "subtitle_chunks": [
+        "수능 엿새 전.",
+        "낯선 남자들이,",
+        "집에 왔다."
+      ],
+      "task_id": "b0a6be62-ab56-403f-b537-c5a5d5cf94ac",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/b0a6be62-ab56-403f-b537-c5a5d5cf94ac/___EP07_N1.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMDUxZTIxYWRkMWJmYTE3OSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDY3OTk4MX0.spLgd3bH4Qs2yd1eAaRFTAFQO-46PpnpZ_sP4ACsYWY"
+    },
+    {
+      "at": 5.6,
+      "duration": 3.2,
+      "subtitle_chunks": [
+        "남편은 숨었고,",
+        "나는",
+        "빗자루를 들었다."
+      ],
+      "task_id": "8c952f40-f5af-4319-b377-37c987246b78",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/8c952f40-f5af-4319-b377-37c987246b78/___EP07_N2.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMmM3NGMzZTY0MjljOWE5ZCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDY1OTQzMH0.mA6tjwrXd-i-VKcZXNxzFWg-CVGKjb7ipIA9V7WWpqg"
+    },
+    {
+      "at": 10.4,
+      "duration": 4.64,
+      "subtitle_chunks": [
+        "수능 끝나면",
+        "폰 사준단 말…",
+        "동네 매장이",
+        "다 들었다."
+      ],
+      "task_id": "4da542c3-74fc-4649-bfb6-cf11204afddf",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/4da542c3-74fc-4649-bfb6-cf11204afddf/___EP07_N3.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNGZlNzEyMGU3MzdiNzY0NCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDY2MTkwMn0.hLeoVCDHBUokF4mPsABEwfaBl9ZwOqPUnTHhavx5Gas"
+    },
+    {
+      "at": 15.6,
+      "duration": 3.76,
+      "subtitle_chunks": [
+        "아저씨들.",
+        "견적은…",
+        "앱으로",
+        "보내 주세요."
+      ],
+      "task_id": "376ace37-8658-4085-b8ab-c3d171f1208e",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/376ace37-8658-4085-b8ab-c3d171f1208e/___EP07_N4.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZmZhM2U1MTgzZjc2ODE3YiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDY0OTQ5Nn0.A_Ceut4_tGSKjLHH7Hw27ojytFiWzB-pz9NkxhtZhMg"
+    },
+    {
+      "at": 20.3,
+      "duration": 4.8,
+      "subtitle": "",
+      "task_id": "a1d0afb1-ff81-4886-b067-175bce4848f8",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/a1d0afb1-ff81-4886-b067-175bce4848f8/___EP07_____.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiODI3ZTJhOWY1OTBlOWNmNiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDYzMTMyN30.L-cPxhMaY7y9bFZA92ywQ90mrNY1tla0ApPhm4vf51Y"
+    }
+  ],
+  "dialogue_subtitles": [],
+  "mix": {
+    "video_audio": 0.6,
+    "narration": 1.4,
+    "bgm_main": 0.14,
+    "bgm_end": 0.35,
+    "sfx": 0.8,
+    "duck": 0.5
+  }
+}
