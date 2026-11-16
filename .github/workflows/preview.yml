@@ -43,7 +43,7 @@ jobs:
                 # 0.5초 간격 프레임 타일 (5초 클립 → 10~11장, 4열)
                 ffmpeg -y -loglevel error -i "$OUT/$name.mp4" -vf "fps=2,scale=480:-1,tile=4x3" -frames:v 1 "$OUT/$name.grid.jpg"
                 # 오디오 파형/볼륨 (말소리 의심 판단용)
-                ffmpeg -y -loglevel error -i "$OUT/$name.mp4" -af "volumedetect" -f null - 2>&1 | grep -E "mean_volume|max_volume" > "$OUT/$name.vol.txt" || true
+                ffmpeg -y -i "$OUT/$name.mp4" -af "volumedetect" -f null - 2>&1 | grep -E "mean_volume|max_volume" > "$OUT/$name.vol.txt" || echo "volumedetect failed" > "$OUT/$name.vol.txt"
                 rm -f "$OUT/$name.mp4"
                 ;;
               image/*)
@@ -63,4 +63,5 @@ jobs:
           EP="${{ inputs.episode }}"
           TAG="preview-$EP"
           gh release delete "$TAG" --yes --cleanup-tag 2>/dev/null || true
+          find "$EP/preview" -type f -empty -delete
           gh release create "$TAG" --title "$TAG" --notes "레퍼런스·클립 프레임 검수용 (자동 생성)" "$EP"/preview/*
