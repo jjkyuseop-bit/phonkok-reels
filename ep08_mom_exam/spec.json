@@ -1,0 +1,109 @@
+{
+  "episode": "ep08_mom_exam",
+  "output": "phonkok_ep08_mom_exam.mp4",
+  "fps": 30,
+  "font_black": "Noto Sans CJK KR Black",
+  "font_regular": "Noto Sans CJK KR",
+  "title": "수능 D-2, 고3 딸보다\n[[엄마가 더]] 떨린 이유",
+  "main_duration": 20.0,
+  "endcard": {
+    "file": "../endcard/endcard.mp4",
+    "duration": 6.0
+  },
+  "assets": {
+    "video": {
+      "clips": [
+        {
+          "task_id": "ecbffeca-b3a5-457e-b1d1-3ea6087efb49",
+          "url": "https://dnznrvs05pmza.cloudfront.net/seedance_2_5/cgt-20261117062031-iskf2/Live_action_Korean_web_drama__photorealistic__natural_film_look__shallow_DOF__practical_lighting__Da.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZDBkMTk5NzIxNTQ1MzY4YyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NTAxMDAzNH0.4L8I9SloqasYvIGBkKVwFx8gAcREcF80N0W--TPyWKI"
+        },
+        {
+          "task_id": "baccd713-502d-4a33-be8c-4d16b8f27c4d",
+          "url": "https://dnznrvs05pmza.cloudfront.net/seedance_2_5/cgt-20261117062042-ioqi2/Live_action_Korean_web_drama__photorealistic__natural_film_look__shallow_DOF__practical_lighting__La.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZDFjNGZhMzE5NTNhZTU5ZSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDk3NjA0OX0.tZsMDISD5uxoH0VZ4aMrJxc2spsDvOUEYDWyARi4GGo"
+        },
+        {
+          "task_id": "ba794d00-8ba5-4cc8-abfb-cf1d9db3ca40",
+          "url": "https://dnznrvs05pmza.cloudfront.net/seedance_2_5/cgt-20261117062050-zuzpd/Live_action_Korean_web_drama__photorealistic__natural_film_look__shallow_DOF__practical_lighting__Sa.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNDk1YjMxMWY1NmQ1NjJiYSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDk5MTUxOX0.Z-QrBE655SMQk5hBlqsQ0RhXRQANG52Zypdw0Y2c_yY"
+        },
+        {
+          "task_id": "e284d059-5772-423b-825c-f5f609deb13f",
+          "url": "https://dnznrvs05pmza.cloudfront.net/seedance_2_5/cgt-20261117062102-uej98/Live_action_Korean_web_drama__photorealistic__natural_film_look__shallow_DOF__practical_lighting__Br.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNDIzNTk0MThiYWIwMGUwZiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NTAwOTE3Nn0.C7y0xttFouVDJX7NrkFwGZvKE7JU5w36C1tlGLGiNzE"
+        }
+      ]
+    },
+    "bgm": {
+      "task_id": "ae002fa3-d7f0-4575-882b-3e387eb9deb5",
+      "url": "https://dnznrvs05pmza.cloudfront.net/lyria3-clip/ae002fa3-d7f0-4575-882b-3e387eb9deb5/___EP08_BGM.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiY2JmMjE2ZmExYTg1ZmE5OSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDk4NzY0Mn0.wJjO3-ZThkK0CrTbJwd5z6AB-Z41SN6GS9wLDATmSiQ"
+    },
+    "sfx": {
+      "task_id": "44bcad75-8608-47b1-b551-85d2d779457b",
+      "url": "https://dnznrvs05pmza.cloudfront.net/audio_sfx/8eae4ca9-6a04-4428-b4ac-09affb60fe3a/___EP08____SFX.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMTAzY2ZmODFmNGJhNTVkNSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDk3MzgyNX0.rx0CbF0mFXqLXFE-fHNwQnsVQDqkumm8yCKJGOyGRq0",
+      "at": 10.0
+    }
+  },
+  "narration": [
+    {
+      "at": 0.5,
+      "duration": 4.48,
+      "subtitle_chunks": [
+        "수능 이틀 전.",
+        "엄마가,",
+        "나보다 더",
+        "떨고 있다."
+      ],
+      "task_id": "fe161b1c-8310-4d13-b5e5-000605f4f066",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/fe161b1c-8310-4d13-b5e5-000605f4f066/___EP08_N1.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZTc3MGU3NGQ2NTZkMjc5MiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDk5Mzc0MX0.5tryyxo8aYiZJao3AF24FH5xIoGFn3XmTy76qA52_sA"
+    },
+    {
+      "at": 5.6,
+      "duration": 3.68,
+      "subtitle_chunks": [
+        "밤새 공부하는 건,",
+        "내가 아니라",
+        "엄마였다."
+      ],
+      "task_id": "9bc0ee5b-cf92-444e-be92-8bd88bad9684",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/9bc0ee5b-cf92-444e-be92-8bd88bad9684/___EP08_N2.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZGIxZGE4M2VlMzNhM2UwZSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDk2NjcxOH0.-sVIsCkQg1vULWhDakBvgqQDp6vhECXdb_mUHL8_4u4"
+    },
+    {
+      "at": 10.2,
+      "duration": 5.12,
+      "subtitle_chunks": [
+        "시험이 아니었다.",
+        "수능 끝나면",
+        "사주기로 한,",
+        "폰 값이었다."
+      ],
+      "task_id": "c063b251-0748-4f0a-bb84-c79e976dd9d5",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/c063b251-0748-4f0a-bb84-c79e976dd9d5/___EP08_N3_v2.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNjMwODUyNzlhZjgwMWI1YSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDk3Nzc4NX0.KBAwkbezNoo_P2QR_FVsAFK14qny2w9wjtsqsTVbl2M"
+    },
+    {
+      "at": 15.7,
+      "duration": 4.24,
+      "subtitle_chunks": [
+        "엄마.",
+        "시험은 내가 볼게.",
+        "견적은…",
+        "앱이 봐."
+      ],
+      "task_id": "11a83e68-b168-4a78-aab3-cdf5026cbcf0",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/11a83e68-b168-4a78-aab3-cdf5026cbcf0/___EP08_N4.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMGZlYzA2ZTEzZGQwMmZkMSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NTAyNDA5N30.csRxCF9aUC4RPDU-T9dGbjHgfJ4IYCJMGu9vxpZ1cnI"
+    },
+    {
+      "at": 20.4,
+      "duration": 4.88,
+      "subtitle": "",
+      "task_id": "94ed59ad-545d-4c5b-87f3-f5d37d9ff13f",
+      "url": "https://dnznrvs05pmza.cloudfront.net/eleven-v4/94ed59ad-545d-4c5b-87f3-f5d37d9ff13f/___EP08_____.mp3?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiODVjOGJjMjA2ZTBhODk5NCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5NDk4NTg4OH0.l1C1Jhe5RB3V8XQlZj0FXH8mWxD6uMH5jEi2IXDogo4"
+    }
+  ],
+  "dialogue_subtitles": [],
+  "mix": {
+    "video_audio": 0.6,
+    "narration": 1.4,
+    "bgm_main": 0.14,
+    "bgm_end": 0.35,
+    "sfx": 0.8,
+    "duck": 0.5
+  }
+}
