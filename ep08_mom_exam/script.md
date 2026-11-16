@@ -36,7 +36,7 @@
 - 프롬프트 공통: live-action Korean web-drama, photorealistic, natural film look, shallow DOF, practical lighting. No dialogue, no speech, no readable on-screen text, no captions, no logos, no music.
 
 ## 보이스
-- (생성 중 기록)
+- 나레이터: Esther (dJlwSfdSqMaQjm3NSl3B, 서울 표준어 30대 여성, 자연스러운 비전문 톤·브이로그/릴스용) — 딸 1인칭 건조한 독백에 맞춤
 
 ## 오디오
 - BGM: 긴장감 있는 피치카토·틱톡 시계 → 코믹 해소 (lyria-3-clip)
@@ -66,5 +66,10 @@
 ## 유튜브 제목
 수능 D-2, 고3 딸보다 엄마가 더 떨린 이유 😭 | 폰콕 #Shorts
 
-## 크레딧 (진행 중 기록)
-- 시작 잔여: 999
+## 크레딧
+- 시작 잔여: 999 → 종료 잔여: **346** → 이번 편 **653 크레딧** (레퍼런스 2장 40 + 5초 클립 4개 600 + 나레이션 6줄 6 + BGM 4 + SFX 3). 4클립 모두 1회 통과, 재생성 0회
+- N3 원본 5.44s 가 길어 쉼표·speed 1.1 로 재생성(5.12s) 후 at 10.2 로 배치, N4 15.7, 엔드카드 20.4
+- 클립 검수: 세션에서 Runway CDN(cloudfront) 직접 접근이 차단돼 `preview-assets` 워크플로(신규)로 레퍼런스 2장·클립 4개 프레임 그리드를 Release `preview-ep08_mom_exam` 에 올려 확인. C1 0초부터 큰절 연타·딸 무표정 ✓, C2 머리띠·형광펜 양손·딸 하품 ✓, C3 전단 흩날림→이마 쿵→딸 전단 확인 ✓(머리띠 없음은 연속성 사소 불일치, 허용), C4 폰 건네기→안도 미소→포옹→엄지척 퇴장 ✓. 말하는 입 없음
+- QA: compose report "문제 없음", 제목 2줄 정상, grid/sub_boundaries 육안 확인 통과(클립 전환 5.0/10.0/15.0 깨끗), 구간별 볼륨으로 나레이션 5구간 존재 확인
+- 공개 URL: https://github.com/jjkyuseop-bit/phonkok-reels/releases/download/ep08_mom_exam/phonkok_ep08_mom_exam.mp4
+- 예약: 2026-11-17 10:00 KST — IG REEL 430754701 / YT short 430754857 (07:32 KST 예약 완료)
