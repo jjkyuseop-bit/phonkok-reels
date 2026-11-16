@@ -1,0 +1,66 @@
+name: preview-assets
+
+# 세션에서 Runway CDN 에 직접 접근할 수 없을 때, 레퍼런스 이미지·클립 프레임을
+# Release 로 올려 검수하기 위한 워크플로. epNN/preview_urls.json:
+#   [{"name":"mom","url":"https://..."}, {"name":"c1","url":"https://....mp4"}]
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "에피소드 폴더명 (epNN/preview_urls.json 필요)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: preview-${{ inputs.episode }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg jq
+      - name: Download and tile
+        run: |
+          set -e
+          EP="${{ inputs.episode }}"
+          OUT="$EP/preview"; mkdir -p "$OUT"
+          jq -c '.[]' "$EP/preview_urls.json" | while read -r item; do
+            name=$(echo "$item" | jq -r .name); url=$(echo "$item" | jq -r .url)
+            curl -sSL --retry 3 -o "$OUT/$name.bin" "$url"
+            mime=$(file -b --mime-type "$OUT/$name.bin")
+            echo "$name $mime $(stat -c%s "$OUT/$name.bin")"
+            case "$mime" in
+              video/*)
+                mv "$OUT/$name.bin" "$OUT/$name.mp4"
+                ffprobe -v error -show_entries format=duration:stream=width,height,codec_type -of default=nw=1 "$OUT/$name.mp4" > "$OUT/$name.probe.txt" || true
+                # 0.5초 간격 프레임 타일 (5초 클립 → 10~11장, 4열)
+                ffmpeg -y -loglevel error -i "$OUT/$name.mp4" -vf "fps=2,scale=480:-1,tile=4x3" -frames:v 1 "$OUT/$name.grid.jpg"
+                # 오디오 파형/볼륨 (말소리 의심 판단용)
+                ffmpeg -y -loglevel error -i "$OUT/$name.mp4" -af "volumedetect" -f null - 2>&1 | grep -E "mean_volume|max_volume" > "$OUT/$name.vol.txt" || true
+                rm -f "$OUT/$name.mp4"
+                ;;
+              image/*)
+                ext=${mime#image/}; [ "$ext" = "jpeg" ] && ext=jpg
+                ffmpeg -y -loglevel error -i "$OUT/$name.bin" -vf "scale=1280:-1" "$OUT/$name.jpg"
+                rm -f "$OUT/$name.bin"
+                ;;
+              *)
+                mv "$OUT/$name.bin" "$OUT/$name.unknown"
+                ;;
+            esac
+          done
+          ls -la "$OUT"
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          EP="${{ inputs.episode }}"
+          TAG="preview-$EP"
+          gh release delete "$TAG" --yes --cleanup-tag 2>/dev/null || true
+          gh release create "$TAG" --title "$TAG" --notes "레퍼런스·클립 프레임 검수용 (자동 생성)" "$EP"/preview/*
